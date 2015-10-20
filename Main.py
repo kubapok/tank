@@ -7,8 +7,8 @@ fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 700), 0, 32)
 pygame.display.set_caption('tank game')
 WHITE = (255, 255, 255)
-tank = pygame.image.load('Images/tank.png')
-tank = pygame.image.load('Images/tank.png')
+tankLower = pygame.image.load('Images/tankLower.png')
+tankUpper = pygame.image.load('Images/tankUpper.png')
 tankx = 100
 tanky = 100
 direction = 'right'
@@ -23,7 +23,7 @@ def rot_center(image, angle):
 
 while True: # the main game loop
     DISPLAYSURF.fill(WHITE)
-
+    
     if direction == 'right':
         tankx += 5
         if tankx == 300:
@@ -41,8 +41,11 @@ while True: # the main game loop
         if tanky == 100:
             direction = 'right'
 
-    tank = rot_center(tank, 90)
-    DISPLAYSURF.blit(tank, (tankx, tanky))
+
+    #tankLower = rot_center(tankLower, 90)
+    tankUpper = rot_center(tankUpper, 90)
+    DISPLAYSURF.blit(tankLower, (tankx, tanky))
+    DISPLAYSURF.blit(tankUpper, (tankx, tanky))
 
 
     for event in pygame.event.get():
