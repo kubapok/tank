@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="900"
+   height="600"
+   id="svg2993"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="lake.svg"
+   inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/lake.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs2995">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3296"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3088"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3088-1"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3117"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3125"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3129"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3133"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3133-8"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3133-8-8"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3193"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3197"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3201"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3205"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3209"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3213"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3217"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3221"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3225"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3229"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3233"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3237"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3241"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3245"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3249"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3253"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3257"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3269"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3273"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3279"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3283"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3287"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3291"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3299"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3303"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3311"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3315"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3319"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3323"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3327"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3331"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3335"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3339"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3343"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3347"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3351"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3355"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3359"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3363"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3367"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3371"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3398"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3402"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3406"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3410"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3414"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3418"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3422"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3426"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3430"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3434"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3438"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3442"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3446"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3450"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3454"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3458"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3462"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3466"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3470"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3474"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3478"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3482"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3486"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3494"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3498"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3502"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3506"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3510"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3514"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3518"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3522"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3526"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3530"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3534"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3538"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3542"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3546"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3550"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3554"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3558"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3562"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3566"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3570"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3574"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3578"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3582"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3590"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3594"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3598"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3602"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3606"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3610"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3614"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3618"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3622"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3626"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3630"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3634"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3638"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3642"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3646"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3650"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3654"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3658"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3662"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3666"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3670"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3674"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3682"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3690"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9830417"
+     inkscape:cx="600.33557"
+     inkscape:cy="475.52821"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="802"
+     inkscape:window-height="602"
+     inkscape:window-x="299"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata2998">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-452.36218)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.36267248;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-opacity:0.57272728;stroke-dasharray:none;stroke-dashoffset:0"
+       d=""
+       id="path3692"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:0.25644821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-opacity:0.57272728;stroke-dasharray:none;stroke-dashoffset:0"
+       d=""
+       id="path3702"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25644821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-opacity:0.57272728;stroke-dasharray:none;stroke-dashoffset:0"
+       d=""
+       id="path3796"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25644821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-opacity:0.57272728;stroke-dasharray:none;stroke-dashoffset:0"
+       d=""
+       id="path3830"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.25644821;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-opacity:0.57272728;stroke-dasharray:none;stroke-dashoffset:0"
+       d=""
+       id="path3832"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000080;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 641.83835,3.8034853 c 15.17212,32.8683237 25.08246,68.1587907 29.23931,104.1204447 0.30781,2.66294 0.64077,5.36354 1.68715,7.83156 1.04637,2.46802 2.83571,4.53599 4.73123,6.43151 l 23.53407,23.53408 c 1.7183,1.7183 3.53383,3.40894 5.74439,4.41817 2.21056,1.00923 4.73048,1.292 7.12407,0.87266 2.39359,-0.41934 4.61756,-1.48976 6.77534,-2.60739 2.15778,-1.11763 4.34389,-2.29626 6.74289,-2.68344 2.68763,-0.43376 5.47187,0.18462 7.92337,1.36854 2.4515,1.18391 4.60262,2.9092 6.59698,4.76231 3.98872,3.70623 7.5924,8.08651 12.57949,10.27168 4.07676,1.7863 8.69083,1.91051 13.12294,1.50158 4.43211,-0.40894 8.81651,-1.3203 13.26375,-1.50158 1.89079,-0.0771 3.80051,-0.0199 5.64689,0.39472 1.84638,0.4146 3.63484,1.20206 5.05042,2.4579 1.24014,1.1002 2.16367,2.53514 2.75017,4.08576 0.5865,1.55061 0.84327,3.215 0.85741,4.87277 0.0283,3.31554 -0.89439,6.55993 -1.89413,9.72127 -0.99975,3.16135 -2.09189,6.32839 -2.42071,9.6277 -0.32883,3.29932 0.1818,6.8093 2.13356,9.48964 1.46134,2.00685 3.66349,3.42821 6.05546,4.09261 2.39196,0.66441 4.96067,0.5934 7.36065,-0.0414 4.79998,-1.26963 8.77623,-4.68188 11.88284,-8.55496 3.10661,-3.87308 5.50021,-8.26036 8.31859,-12.34796 2.81839,-4.0876 6.18426,-7.97419 10.59799,-10.24811 4.39868,-2.26617 9.48653,-2.75452 14.43389,-2.8414 4.94736,-0.0869 9.94122,0.1831 14.80542,-0.72437 4.08062,-0.76129 8.01932,-2.36228 11.38537,-4.79143 3.36604,-2.42915 6.14686,-5.69506 7.86978,-9.47164 2.45414,-5.37937 2.68229,-11.46117 3.1443,-17.35583 0.46202,-5.89466 1.29738,-12.04027 4.70039,-16.87555 3.34908,-4.75865 8.75276,-7.61771 14.13752,-9.8235 5.38476,-2.20579 11.03368,-3.97545 15.81493,-7.29219 7.79443,-5.40696 12.54755,-14.765412 12.83677,-24.247225 0.13789,-4.520643 -0.662,-9.075886 0,-13.549921 0.46448,-3.139123 1.63667,-6.137783 2.13946,-9.270998 1.08905,-6.786638 -1.03263,-13.69428 -3.922,-19.930947 -2.88938,-6.236666 -6.57275,-12.117198 -8.91476,-18.579354 -3.20956,-8.855938 -3.81787,-18.5843475 -7.84469,-27.0998419 -4.26563,-9.0204961 -12.17574,-16.0265281 -21.18525,-20.3153271 -9.0095,-4.2888 -19.07214,-6.01457 -29.04741,-6.257311 -19.95054,-0.485481 -39.64102,4.756943 -59.59302,5.178026 -15.23269,0.321483 -30.40579,-2.17187 -45.64184,-2.139461 -6.18279,0.01315 -12.37501,0.44216 -18.54199,0 -13.03079,-0.934281 -25.44158,-5.706113 -37.58724,-10.518317 -12.14566,-4.812203 -24.45309,-9.768436 -37.44895,-11.10341 -6.49792,-0.667487 -13.12993,-0.404723 -19.45448,1.22886 -6.32456,1.633583 -12.33768,4.672444 -17.10364,9.139457 -4.76596,4.467013 -8.23451,10.397585 -9.35489,16.832906 -1.12037,6.43532 0.2064,13.34439 3.99198,18.6677308 3.49423,4.91363874 9.02004,8.334376 14.97623,9.2709985"
+       id="path3294"
+       inkscape:path-effect="#path-effect3296"
+       inkscape:original-d="m 641.83835,3.8034853 c 47.81631,23.0064687 -8.19549,66.6856517 29.23931,104.1204447 3.11039,3.1104 3.31113,11.15582 6.41838,14.26307 7.80704,7.80705 15.15346,15.15346 23.53407,23.53408 5.07763,5.07762 19.77719,-3.30475 26.38669,0 11.00227,5.50113 20.19459,9.49729 27.09984,16.40253 4.39778,4.39778 21.98891,-4.39778 26.38669,0 2.25832,2.25832 8.43899,0.5943 10.69731,2.85262 3.95853,3.95853 -25.48,24.34399 1.4263,37.79714 26.01692,13.00846 33.06269,-15.94699 44.21553,-27.09984 5.39081,-5.39081 21.61323,0.24727 29.23931,-3.56577 7.26391,-3.63195 13.25724,-8.26516 19.25515,-14.26307 6.2884,-6.2884 3.59495,-29.98164 7.84469,-34.23138 7.53269,-7.53269 22.90574,-10.06897 29.95245,-17.11569 5.95287,-5.95286 7.36894,-18.77939 12.83677,-24.247225 2.25832,-2.25832 -2.25832,-11.291601 0,-13.549921 1.90175,-1.901743 0.23772,-7.369255 2.13946,-9.270998 12.50834,-12.508336 -8.1624,-33.835933 -12.83676,-38.510301 -5.74719,-5.74719 -2.35002,-21.60516846 -7.84469,-27.0998419 -3.24191,-3.2419034 -102.85729,-14.4262211 -109.82568,-21.3946121 -6.86277,-6.862766 -36.22166,2.57063 -45.64184,-2.139461 -3.9331,-1.966552 -14.04702,0 -18.54199,0 -34.8812,0 -100.50006,7.790067 -116.95722,24.2472268 -7.53042,7.5304291 7.64862,15.1330914 14.97623,9.2709985 z"
+       inkscape:connector-curvature="0"
+       transform="translate(0,452.36218)" />
+  </g>
+</svg>
