@@ -23,7 +23,7 @@ def rot_center(image, angle):
 
 while True: # the main game loop
     DISPLAYSURF.fill(WHITE)
-    
+
     if direction == 'right':
         tankx += 5
         if tankx == 300:
