@@ -1,7 +1,7 @@
 import pygame
 from rot_center import *
 
-class Tank():
+class Tank(pygame.sprite.Sprite):
     '''represents a tank,
     allows to move, change direction, shot
     tower moves separatly'''
@@ -17,8 +17,11 @@ class Tank():
                 'left' : 'up'  }
 
     def __init__(self,x,y):
-        self.upper = pygame.image.load('Images/tankUpper.png')
-        self.lower = pygame.image.load('Images/tankLower.png')
+        pygame.sprite.Sprite.__init__(self)
+        self.upper = pygame.image.load('Images/tankUpper.png').convert_alpha()
+        self.image = pygame.image.load('Images/tankUpper.png').convert_alpha()
+        self.lower = pygame.image.load('Images/tankLower.png').convert_alpha()
+        self.rect = self.lower.get_rect()
         self.x = x
         self.y = y
         self.direction = 'up'
@@ -49,3 +52,5 @@ class Tank():
             self.y += 5
         elif self.direction == 'left':
             self.x -= 5
+        self.rect.x = self.x
+        self.rect.y = self.y
