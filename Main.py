@@ -1,21 +1,26 @@
+#!/usr/bin/python3
+
 import pygame, sys
 from pygame.locals import *
 from Tank import *
 
 
-pygame.init()
-FPS = 3 # frames per second setting
-fpsClock = pygame.time.Clock()
-# set up the window
-DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
-pygame.display.set_caption('tank game')
+FPS = 90
 WHITE = (255, 255, 255)
 
-tank = Tank(100,100)
-tracks = pygame.image.load('Images/tracks.png')
-tree = pygame.image.load('Images/tree.png')
-lake = pygame.image.load('Images/lake.png')
-train = pygame.image.load('Images/train.png')
+
+pygame.init()
+fpsClock = pygame.time.Clock()
+DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
+pygame.display.set_caption('tank game')
+
+
+tank    = Tank(100,100)
+
+tracks  = pygame.image.load(os.path.join('Images','tracks.png'))
+tree    = pygame.image.load(os.path.join('Images','tree.png'))
+lake    = pygame.image.load(os.path.join('Images','lake.png'))
+train   = pygame.image.load(os.path.join('Images','train.png'))
 
 class Tree():
     def __init__(self,x,y):
@@ -38,18 +43,15 @@ while True: # the main game loop
         (tank.x == 300 and tank.y == 300) or\
         (tank.x == 100 and tank.y == 100):
         tank.turnRight()
-
     tank.move()
 
-    #print(tank.direction)
 
     DISPLAYSURF.blit(tracks, (0, 0))
     DISPLAYSURF.blit(lake, (0, 0))
     DISPLAYSURF.blit(tree, (10, 10))
     DISPLAYSURF.blit(tree2.image, (tree2.x, tree2.y))
-    DISPLAYSURF.blit(train, (600, 50))
-    DISPLAYSURF.blit(tank.lower, (tank.x, tank.y))
-    DISPLAYSURF.blit(tank.upper, (tank.x, tank.y))
+    #DISPLAYSURF.blit(train, (600, 50))
+    tank.display(DISPLAYSURF)
 
 
     #tank.update()

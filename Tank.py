@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 import pygame
+import os
 from rot_center import *
 
 class Tank(pygame.sprite.Sprite):
@@ -18,10 +21,11 @@ class Tank(pygame.sprite.Sprite):
 
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.upper = pygame.image.load('Images/tankUpper.png').convert_alpha()
-        self.lower = pygame.image.load('Images/tankLower.png').convert_alpha()
-        self.image = pygame.image.load('Images/tankLower.png').convert_alpha()
-        self.image = pygame.image.load('Images/tankLower.png').convert_alpha()
+        self.speed = 1
+        self.upper = pygame.image.load(os.path.join('Images','tankUpper.png')).convert_alpha()
+        self.lower = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
+        self.image = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
+        self.image = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
         self.rect = self.lower.get_rect()
         self.x = x
         self.y = y
@@ -46,12 +50,15 @@ class Tank(pygame.sprite.Sprite):
         self.upper = rot_center(self.upper, 90)
     def move(self):
         if self.direction == 'up':
-            self.y -= 5
+            self.y -= self.speed
         elif self.direction == 'right':
-            self.x += 5
+            self.x += self.speed
         elif self.direction == 'down':
-            self.y += 5
+            self.y += self.speed
         elif self.direction == 'left':
-            self.x -= 5
+            self.x -= self.speed
         self.rect.x = self.x
         self.rect.y = self.y
+    def display(self, display):
+        display.blit(self.lower, (self.x, self.y))
+        display.blit(self.upper, (self.x, self.y))

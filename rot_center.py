@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import pygame
 
 def rot_center(image, angle):
