@@ -15,6 +15,7 @@ tank = Tank(100,100)
 tracks = pygame.image.load('Images/tracks.png')
 lake = pygame.image.load('Images/lake.png')
 tree = pygame.image.load('Images/tree.png')
+train = pygame.image.load('Images/train.png')
 
 while True: # the main game loop
     DISPLAYSURF.fill(WHITE)
@@ -32,8 +33,11 @@ while True: # the main game loop
     DISPLAYSURF.blit(tracks, (0, 0))
     DISPLAYSURF.blit(lake, (0, 0))
     DISPLAYSURF.blit(tree, (10, 10))
+    DISPLAYSURF.blit(tree, (300, 150))
+    DISPLAYSURF.blit(train, (600, 50))
     DISPLAYSURF.blit(tank.lower, (tank.x, tank.y))
     DISPLAYSURF.blit(tank.upper, (tank.x, tank.y))
+
 
     for event in pygame.event.get():
 
