@@ -4,7 +4,7 @@ from Tank import *
 
 
 pygame.init()
-FPS = 15 # frames per second setting
+FPS = 3 # frames per second setting
 fpsClock = pygame.time.Clock()
 # set up the window
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
@@ -33,9 +33,9 @@ tree2 = Tree(300,150)
 while True: # the main game loop
     DISPLAYSURF.fill(WHITE)
 
-    if (tank.x == 700 and tank.y == 100) or\
-        (tank.x == 100 and tank.y == 700) or\
-        (tank.x == 700 and tank.y == 700) or\
+    if (tank.x == 300 and tank.y == 100) or\
+        (tank.x == 100 and tank.y == 300) or\
+        (tank.x == 300 and tank.y == 300) or\
         (tank.x == 100 and tank.y == 100):
         tank.turnRight()
 
@@ -53,7 +53,7 @@ while True: # the main game loop
 
 
     #tank.update()
-    print(pygame.sprite.collide_rect(tree2, tank))
+    print(pygame.sprite.collide_mask(tree2, tank))
     #print(tree2.rect)
     #print(tank.rect)
     #print(tank)

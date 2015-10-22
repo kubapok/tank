@@ -19,8 +19,9 @@ class Tank(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
         self.upper = pygame.image.load('Images/tankUpper.png').convert_alpha()
-        self.image = pygame.image.load('Images/tankUpper.png').convert_alpha()
         self.lower = pygame.image.load('Images/tankLower.png').convert_alpha()
+        self.image = pygame.image.load('Images/tankLower.png').convert_alpha()
+        self.image = pygame.image.load('Images/tankLower.png').convert_alpha()
         self.rect = self.lower.get_rect()
         self.x = x
         self.y = y
