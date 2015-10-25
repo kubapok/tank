@@ -8,26 +8,45 @@ from Tree import *
 from Train import *
 from Lake import *
 from Tracks import *
+from Sheep import *
+from Fence import *
 
+pygame.init()
 
 
 FPS = 90
 WHITE = (255, 255, 255)
+ERRORDISPLAY = 1
 
 
-pygame.init()
 fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
 
 
-tank    = Tank(100,100)
+tank = Tank(100,100)
 tree1 = Tree(10,10)
 tree2 = Tree(300,150)
 train = Train()
 lake = Lake(0,0)
 tracks = Tracks(0,0)
 
+
+sheepes = [ #XD
+    Sheep(800,400),
+    Sheep(850,450)
+]
+
+
+fences = [
+    Fence(770,550,2),
+    Fence(700,500,1),
+    Fence(650,450,2),
+    Fence(640,380,3),
+    Fence(685,325,4),
+    Fence(770,300,5),
+    Fence(855,330,6)
+]
 
 while True:
     DISPLAYSURF.fill(WHITE)
@@ -37,7 +56,7 @@ while True:
         (tank.rect.x == 300 and tank.rect.y == 300) or\
         (tank.rect.x == 100 and tank.rect.y == 100):
         tank.turnRight()
-        tank.towerLeft()
+        #tank.towerLeft()
 
     tank.move()
     train.move()
@@ -49,6 +68,12 @@ while True:
     train.display(DISPLAYSURF)
     tank.display(DISPLAYSURF)
 
+
+    for fence in fences:
+        fence.display(DISPLAYSURF)
+
+    for sheep in sheepes:
+        sheep.display(DISPLAYSURF)
 
     print(pygame.sprite.collide_mask(tree2, tank))
 
