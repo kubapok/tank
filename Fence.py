@@ -13,7 +13,8 @@ class Fence():
             self.image= pygame.image.load(os.path.join('Images',image)).convert_alpha()
         except pygame.error:
             print("There is no image: " + image + ".\nLoading fence1.png")
-            self.image= pygame.image.load(os.path.join('Images','fence1.png')).convert_alpha()
+            if ERRORDISPLAY:
+                self.image= pygame.image.load(os.path.join('Images','fence1.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y

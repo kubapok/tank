@@ -15,7 +15,7 @@
    version="1.1"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="fence6.svg"
-   inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/fence5.png"
+   inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/fence6.png"
    inkscape:export-xdpi="140.62"
    inkscape:export-ydpi="140.62">
   <defs
@@ -108,7 +108,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>

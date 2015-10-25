@@ -31,12 +31,10 @@ train = Train()
 lake = Lake(0,0)
 tracks = Tracks(0,0)
 
-
 sheepes = [ #XD
     Sheep(800,400),
     Sheep(850,450)
 ]
-
 
 fences = [
     Fence(770,550,2),
@@ -45,7 +43,7 @@ fences = [
     Fence(640,380,3),
     Fence(685,325,4),
     Fence(770,300,5),
-    Fence(855,330,6)
+    Fence(855,310,6)
 ]
 
 while True:
