@@ -2,7 +2,13 @@
 
 import pygame, sys
 from pygame.locals import *
+
 from Tank import *
+from Tree import *
+from Train import *
+from Lake import *
+from Tracks import *
+
 
 
 FPS = 90
@@ -16,49 +22,36 @@ pygame.display.set_caption('tank game')
 
 
 tank    = Tank(100,100)
-
-tracks  = pygame.image.load(os.path.join('Images','tracks.png'))
-tree    = pygame.image.load(os.path.join('Images','tree.png'))
-lake    = pygame.image.load(os.path.join('Images','lake.png'))
-train   = pygame.image.load(os.path.join('Images','train.png'))
-
-class Tree():
-    def __init__(self,x,y):
-        super().__init__()
-        self.x = x
-        self.y = y
-        self.image= pygame.image.load('Images/tree.png').convert_alpha()
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
-
-
+tree1 = Tree(10,10)
 tree2 = Tree(300,150)
+train = Train()
+lake = Lake(0,0)
+tracks = Tracks(0,0)
 
-while True: # the main game loop
+
+while True:
     DISPLAYSURF.fill(WHITE)
 
-    if (tank.x == 300 and tank.y == 100) or\
-        (tank.x == 100 and tank.y == 300) or\
-        (tank.x == 300 and tank.y == 300) or\
-        (tank.x == 100 and tank.y == 100):
+    if (tank.rect.x == 300 and tank.rect.y == 100) or\
+        (tank.rect.x == 100 and tank.rect.y == 300) or\
+        (tank.rect.x == 300 and tank.rect.y == 300) or\
+        (tank.rect.x == 100 and tank.rect.y == 100):
         tank.turnRight()
+        tank.towerLeft()
+
     tank.move()
+    train.move()
 
-
-    DISPLAYSURF.blit(tracks, (0, 0))
-    DISPLAYSURF.blit(lake, (0, 0))
-    DISPLAYSURF.blit(tree, (10, 10))
-    DISPLAYSURF.blit(tree2.image, (tree2.x, tree2.y))
-    #DISPLAYSURF.blit(train, (600, 50))
+    tracks.display(DISPLAYSURF)
+    tree1.display(DISPLAYSURF)
+    tree2.display(DISPLAYSURF)
+    lake.display(DISPLAYSURF)
+    train.display(DISPLAYSURF)
     tank.display(DISPLAYSURF)
 
 
-    #tank.update()
     print(pygame.sprite.collide_mask(tree2, tank))
-    #print(tree2.rect)
-    #print(tank.rect)
-    #print(tank)
+
 
     for event in pygame.event.get():
 
