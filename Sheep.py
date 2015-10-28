@@ -11,9 +11,12 @@ class Sheep(pygame.sprite.Sprite,Target):
         assert (direction == 'left' or direction == 'right')
         pygame.sprite.Sprite.__init__(self)
         Target.__init__(self,True)
-        self.image= pygame.image.load(os.path.join('Images','sheep.png')).convert_alpha()
+        self.imageRight= pygame.image.load(os.path.join('Images','sheep.png')).convert_alpha()
+        self.imageLeft= pygame.transform.flip(self.imageRight, True, False)
         if direction == 'left':
-            self.image = pygame.transform.flip(self.image, True, False)
+            self.image = self.imageLeft
+        elif direction == 'right':
+            self.image  = self.imageRight
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
@@ -38,15 +41,15 @@ class Sheep(pygame.sprite.Sprite,Target):
     def turnIfCollide(self):
         if self.rect.x > 900:
             self.direction = 'left'
-            self.image = pygame.transform.flip(self.image, True, False)
+            self.image = self.imageLeft
             return
 
         for target in Target.targets:
             if target != self and pygame.sprite.collide_mask(self, target):
                 if self.direction == 'right':
                     self.direction = 'left'
-                    self.image = pygame.transform.flip(self.image, True, False)
+                    self.image = self.imageLeft
                 elif self.direction  == 'left':
                     self.direction = 'right'
-                    self.image = pygame.transform.flip(self.image, True, False)
-                self.move(10)
+                    self.image = self.imageRight
+                self.move(15)

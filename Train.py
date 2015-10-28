@@ -8,28 +8,32 @@ from rot_center import *
 
 class Train(pygame.sprite.Sprite, Target):
 
-    startPosx = 600
-    startPosy = 50
+    exists = False
 
-    def __init__(self):
+    def __init__(self, speed):
         pygame.sprite.Sprite.__init__(self)
         Target.__init__(self,True)
         self.image= pygame.image.load(os.path.join('Images','train.png')).convert_alpha()
         self.rect = self.image.get_rect()
-        self.rect.x = Train.startPosx
-        self.rect.y = Train.startPosy
+        self.rect.x, self.rect.y = Train.coord[0][0], Train.coord[0][1]
         self.coord = Train.coord
         self.moveStep = 0
+        self.speed = speed
+        Train.exists = True
+
+    def __del__(self):
+        Train.exists = False
 
 
     def display(self, display):
         display.blit(self.image, (self.rect.x, self.rect.y))
         self.rect.x, self.rect.y = Train.coord[self.moveStep][0], Train.coord[self.moveStep][1]
     def move(self):
-        if self.moveStep < len(Train.coord) -1:
-            self.moveStep +=1
+        if self.moveStep < len(Train.coord) - self.speed:
+            self.moveStep += self.speed
         else:
-            pass
+            Train.exists = False
+            self.kill()
 
         '''
             try:
@@ -41,7 +45,106 @@ class Train(pygame.sprite.Sprite, Target):
         '''
 
     coord = [
-
+[969, 133],
+[968, 133],
+[967, 133],
+[966, 133],
+[965, 133],
+[964, 133],
+[963, 133],
+[962, 133],
+[961, 133],
+[960, 133],
+[959, 133],
+[958, 133],
+[957, 133],
+[956, 133],
+[955, 133],
+[954, 133],
+[953, 133],
+[952, 133],
+[951, 133],
+[950, 133],
+[949, 133],
+[948, 133],
+[947, 133],
+[946, 133],
+[945, 133],
+[944, 133],
+[943, 133],
+[942, 133],
+[941, 133],
+[940, 133],
+[939, 133],
+[938, 133],
+[937, 133],
+[936, 133],
+[935, 133],
+[934, 133],
+[933, 133],
+[932, 133],
+[931, 133],
+[930, 133],
+[929, 133],
+[928, 133],
+[927, 133],
+[926, 133],
+[925, 133],
+[924, 133],
+[923, 133],
+[922, 133],
+[921, 133],
+[920, 133],
+[919, 133],
+[918, 133],
+[917, 133],
+[916, 133],
+[915, 133],
+[914, 133],
+[913, 133],
+[912, 133],
+[911, 133],
+[910, 133],
+[909, 133],
+[908, 133],
+[907, 133],
+[906, 133],
+[905, 133],
+[904, 133],
+[903, 133],
+[902, 133],
+[901, 133],
+[900, 133],
+[899, 133],
+[898, 133],
+[897, 133],
+[896, 133],
+[895, 133],
+[894, 133],
+[893, 133],
+[892, 133],
+[891, 133],
+[890, 133],
+[889, 133],
+[888, 133],
+[887, 133],
+[886, 133],
+[885, 133],
+[884, 133],
+[883, 133],
+[882, 133],
+[881, 133],
+[880, 133],
+[879, 133],
+[878, 133],
+[877, 133],
+[876, 133],
+[875, 133],
+[874, 133],
+[873, 133],
+[872, 133],
+[871, 133],
+[870, 133],
 [869, 133],
 [868, 133],
 [867, 133],

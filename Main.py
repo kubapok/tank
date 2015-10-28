@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import pygame, sys
+import pygame, sys, random
 from pygame.locals import *
 
 from Tank import *
@@ -14,9 +14,10 @@ from Fence import *
 pygame.init()
 
 
-FPS = 90
+FPS = 30
 WHITE = (255, 255, 255)
 ERRORDISPLAY = 1
+max_train_wait = 30
 
 WIDTH = 900
 HEIGHT = 600
@@ -28,15 +29,15 @@ pygame.display.set_caption('tank game')
 tank = Tank(100,100)
 tree1 = Tree(10,10)
 tree2 = Tree(300,150)
-train = Train()
 lake = Lake(0,0)
 tracks = Tracks(0,0)
 
 sheepes = [ #XD
-    Sheep(800,400, 'right'),
+    Sheep(800,390, 'left'),
     Sheep(820,450, 'left'),
     Sheep(750,500, 'right'),
-    Sheep(890,430, 'right')
+    Sheep(890,430, 'right'),
+    Sheep(900,480, 'right')
 ]
 
 fences = [
@@ -60,28 +61,44 @@ while True:
         tank.turnRight()
         #tank.towerLeft()
 
+
+
     tank.move()
-    train.move()
+
+
+
+
     for sheep in sheepes:
         sheep.move()
         sheep.turnIfCollide()
-
-
-
 
     tracks.display(DISPLAYSURF)
     tree1.display(DISPLAYSURF)
     tree2.display(DISPLAYSURF)
     lake.display(DISPLAYSURF)
-    train.display(DISPLAYSURF)
+
     tank.display(DISPLAYSURF)
+
+    if (Train.exists == True):
+        train.move()
+        train.display(DISPLAYSURF)
+    else:
+        try:
+            train_wait -= 1
+        except NameError:
+            train_wait = int(random.random()* FPS * max_train_wait)
+        if train_wait < 0:
+            train = Train(2)
+            train_wait = int(random.random()* FPS * max_train_wait)
+    print(train_wait/30)
+
     for fence in fences:
         fence.display(DISPLAYSURF)
     for sheep in sheepes:
         sheep.display(DISPLAYSURF)
 
     #print(pygame.sprite.collide_mask(tree2, tank))
-    print(sheepes[1].rect.x)
+
 
     for event in pygame.event.get():
 

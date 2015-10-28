@@ -21,7 +21,7 @@ class Tank(pygame.sprite.Sprite):
 
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.speed = 1
+        self.speed = 5
         self.upper = pygame.image.load(os.path.join('Images','tankUpper.png')).convert_alpha()
         self.lower = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
         self.image = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
