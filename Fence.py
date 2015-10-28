@@ -2,12 +2,14 @@
 
 import pygame
 import os
+from Target import *
 from rot_center import *
 
 
-class Fence():
+class Fence(pygame.sprite.Sprite, Target):
     def __init__(self,x,y,version):
-        super().__init__()
+        pygame.sprite.Sprite.__init__(self)
+        Target.__init__(self,True)
         image = 'fence' + str(version) + '.png'
         try:
             self.image= pygame.image.load(os.path.join('Images',image)).convert_alpha()

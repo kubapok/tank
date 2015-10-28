@@ -18,7 +18,8 @@ FPS = 90
 WHITE = (255, 255, 255)
 ERRORDISPLAY = 1
 
-
+WIDTH = 900
+HEIGHT = 600
 fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
@@ -32,8 +33,10 @@ lake = Lake(0,0)
 tracks = Tracks(0,0)
 
 sheepes = [ #XD
-    Sheep(800,400),
-    Sheep(850,450)
+    Sheep(800,400, 'right'),
+    Sheep(820,450, 'left'),
+    Sheep(750,500, 'right'),
+    Sheep(890,430, 'right')
 ]
 
 fences = [
@@ -45,6 +48,7 @@ fences = [
     Fence(770,300,5),
     Fence(855,310,6)
 ]
+
 
 while True:
     DISPLAYSURF.fill(WHITE)
@@ -58,6 +62,12 @@ while True:
 
     tank.move()
     train.move()
+    for sheep in sheepes:
+        sheep.move()
+        sheep.turnIfCollide()
+
+
+
 
     tracks.display(DISPLAYSURF)
     tree1.display(DISPLAYSURF)
@@ -65,16 +75,13 @@ while True:
     lake.display(DISPLAYSURF)
     train.display(DISPLAYSURF)
     tank.display(DISPLAYSURF)
-
-
     for fence in fences:
         fence.display(DISPLAYSURF)
-
     for sheep in sheepes:
         sheep.display(DISPLAYSURF)
 
-    print(pygame.sprite.collide_mask(tree2, tank))
-
+    #print(pygame.sprite.collide_mask(tree2, tank))
+    print(sheepes[1].rect.x)
 
     for event in pygame.event.get():
 

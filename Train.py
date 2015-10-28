@@ -2,16 +2,18 @@
 
 import pygame
 import os
+from Target import *
 from rot_center import *
 
 
-class Train():
+class Train(pygame.sprite.Sprite, Target):
 
     startPosx = 600
     startPosy = 50
 
     def __init__(self):
-        super().__init__()
+        pygame.sprite.Sprite.__init__(self)
+        Target.__init__(self,True)
         self.image= pygame.image.load(os.path.join('Images','train.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = Train.startPosx

@@ -2,12 +2,14 @@
 
 import pygame
 import os
+from Target import *
 from rot_center import *
 
 
-class Lake():
+class Lake(pygame.sprite.Sprite):
     def __init__(self,x,y):
-        super().__init__()
+        pygame.sprite.Sprite.__init__(self)
+        Target.__init__(self, False)
         self.image= pygame.image.load(os.path.join('Images','lake.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = x
