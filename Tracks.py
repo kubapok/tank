@@ -3,7 +3,6 @@
 import pygame
 import os
 from Target import *
-from rot_center import *
 
 
 class Tracks(pygame.sprite.Sprite, Target):

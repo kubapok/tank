@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import pygame, sys, random
+import pygame, sys, random, multiprocessing
 from pygame.locals import *
 
 from Tank import *
@@ -10,20 +10,21 @@ from Lake import *
 from Tracks import *
 from Sheep import *
 from Fence import *
+from Command import *
 
 pygame.init()
 
-
 FPS = 30
 WHITE = (255, 255, 255)
-ERRORDISPLAY = 1
-max_train_wait = 30
-
+#ERRORDISPLAY = 1
+max_train_wait = 30 # maximum time we can wait for new train after old one is gone
 WIDTH = 900
 HEIGHT = 600
+
 fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
+
 
 
 tank = Tank(100,100)
@@ -51,59 +52,68 @@ fences = [
 ]
 
 
+
+def run_game():
+    while True:
+        DISPLAYSURF.fill(WHITE)
+        '''
+        if (tank.rect.x == 300 and tank.rect.y == 100) or\
+            (tank.rect.x == 100 and tank.rect.y == 300) or\
+            (tank.rect.x == 300 and tank.rect.y == 300) or\
+            (tank.rect.x == 100 and tank.rect.y == 100):
+            tank.turnRight()
+
+        tank.move()
+        '''
+        '''
+        print(command.receivedFromUserEvent.is_set())
+        if command.receivedFromUserEvent.is_set():
+            tank.move()
+        '''
+        for sheep in sheepes:
+            sheep.move()
+            sheep.turnIfCollide()
+
+        tracks.display(DISPLAYSURF)
+        tree1.display(DISPLAYSURF)
+        tree2.display(DISPLAYSURF)
+        lake.display(DISPLAYSURF)
+        tank.display(DISPLAYSURF)
+
+        if (Train.exists == True):
+            train.move()
+            train.display(DISPLAYSURF)
+        else:
+            try:
+                train_wait -= 1
+            except NameError:
+                train_wait = int(random.random()* FPS * max_train_wait)
+            if train_wait < 0:
+                train = Train(2)
+                train_wait = int(random.random()* FPS * max_train_wait)
+
+        for fence in fences:
+            fence.display(DISPLAYSURF)
+        for sheep in sheepes:
+            sheep.display(DISPLAYSURF)
+
+        #print(pygame.sprite.collide_mask(tree2, tank))
+
+        for event in pygame.event.get():
+
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+        pygame.display.update()
+        fpsClock.tick(FPS)
+
+
+game = multiprocessing.Process(target=run_game)
+game.start()
+
 while True:
-    DISPLAYSURF.fill(WHITE)
-
-    if (tank.rect.x == 300 and tank.rect.y == 100) or\
-        (tank.rect.x == 100 and tank.rect.y == 300) or\
-        (tank.rect.x == 300 and tank.rect.y == 300) or\
-        (tank.rect.x == 100 and tank.rect.y == 100):
-        tank.turnRight()
-        #tank.towerLeft()
-
-
-
+    command = Command()
+    while not command.receivedFromUserEvent.is_set():
+        command.waitForCommand()
+    print('command received')
     tank.move()
-
-
-
-
-    for sheep in sheepes:
-        sheep.move()
-        sheep.turnIfCollide()
-
-    tracks.display(DISPLAYSURF)
-    tree1.display(DISPLAYSURF)
-    tree2.display(DISPLAYSURF)
-    lake.display(DISPLAYSURF)
-
-    tank.display(DISPLAYSURF)
-
-    if (Train.exists == True):
-        train.move()
-        train.display(DISPLAYSURF)
-    else:
-        try:
-            train_wait -= 1
-        except NameError:
-            train_wait = int(random.random()* FPS * max_train_wait)
-        if train_wait < 0:
-            train = Train(2)
-            train_wait = int(random.random()* FPS * max_train_wait)
-    print(train_wait/30)
-
-    for fence in fences:
-        fence.display(DISPLAYSURF)
-    for sheep in sheepes:
-        sheep.display(DISPLAYSURF)
-
-    #print(pygame.sprite.collide_mask(tree2, tank))
-
-
-    for event in pygame.event.get():
-
-        if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
-    pygame.display.update()
-    fpsClock.tick(FPS)

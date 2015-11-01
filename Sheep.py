@@ -3,7 +3,7 @@
 import pygame
 import os
 from Target import *
-from rot_center import *
+from rotate_center import *
 
 
 class Sheep(pygame.sprite.Sprite,Target):
@@ -52,4 +52,4 @@ class Sheep(pygame.sprite.Sprite,Target):
                 elif self.direction  == 'left':
                     self.direction = 'right'
                     self.image = self.imageRight
-                self.move(15)
+                self.move(10)

@@ -2,7 +2,7 @@
 
 import pygame
 import os
-from rot_center import *
+from rotate_center import *
 
 class Tank(pygame.sprite.Sprite):
     '''represents a tank,
@@ -34,19 +34,19 @@ class Tank(pygame.sprite.Sprite):
     def turnRight(self):
         self.direction = Tank.toRight[self.direction]
         self.target = Tank.toRight[self.target]
-        self.lower = rot_center(self.lower, 270)
-        self.upper = rot_center(self.upper, 270)
+        self.lower = rotate_center(self.lower, 270)
+        self.upper = rotate_center(self.upper, 270)
     def turnLeft(self):
         self.direction = Tank.toLeft[self.direction]
         self.target = Tank.toLeft[self.target]
-        self.lower = rot_center(self.lower, 90)
-        self.upper = rot_center(self.upper, 90)
+        self.lower = rotate_center(self.lower, 90)
+        self.upper = rotate_center(self.upper, 90)
     def towerRight(self):
         self.target = Tank.toRight[self.target]
-        self.upper = rot_center(self.upper, 270)
+        self.upper = rotate_center(self.upper, 270)
     def towerLeft(self):
         self.target = Tank.toLeft[self.target]
-        self.upper = rot_center(self.upper, 90)
+        self.upper = rotate_center(self.upper, 90)
     def move(self):
         if self.direction == 'up':
             self.rect.y -= self.speed
