@@ -52,4 +52,4 @@ class Sheep(pygame.sprite.Sprite,Target):
                 elif self.direction  == 'left':
                     self.direction = 'right'
                     self.image = self.imageRight
-                self.move(10)
+                self.move(15)

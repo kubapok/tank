@@ -51,9 +51,7 @@ fences = [
     Fence(855,310,6)
 ]
 
-
-
-def run_game():
+def run_game(task):
     while True:
         DISPLAYSURF.fill(WHITE)
         '''
@@ -70,9 +68,33 @@ def run_game():
         if command.receivedFromUserEvent.is_set():
             tank.move()
         '''
+
+        if task.value == 0:
+            tank.rush = False
+        elif task.value == 1:
+            tank.rush = True
+        elif task.value == 2:
+            tank.turnRight()
+        elif task.value == 3:
+            tank.turnLeft()
+        task.value = -1
+
+        if tank.rush:
+            tank.move()
+
         for sheep in sheepes:
             sheep.move()
             sheep.turnIfCollide()
+
+
+
+
+
+        for fence in fences:
+            fence.display(DISPLAYSURF)
+        for sheep in sheepes:
+            sheep.display(DISPLAYSURF)
+
 
         tracks.display(DISPLAYSURF)
         tree1.display(DISPLAYSURF)
@@ -92,10 +114,6 @@ def run_game():
                 train = Train(2)
                 train_wait = int(random.random()* FPS * max_train_wait)
 
-        for fence in fences:
-            fence.display(DISPLAYSURF)
-        for sheep in sheepes:
-            sheep.display(DISPLAYSURF)
 
         #print(pygame.sprite.collide_mask(tree2, tank))
 
@@ -108,12 +126,15 @@ def run_game():
         fpsClock.tick(FPS)
 
 
-game = multiprocessing.Process(target=run_game)
+task = multiprocessing.Value('i',0)
+game = multiprocessing.Process(target=run_game, args=(task,))
 game.start()
+command = Command()
+
 
 while True:
-    command = Command()
-    while not command.receivedFromUserEvent.is_set():
-        command.waitForCommand()
-    print('command received')
-    tank.move()
+    command.waitForCommand()
+    if command.receivedFromUserEvent == True:
+        print('comand received')
+        task.value = command.task
+        command.receivedFromUserEvent = False

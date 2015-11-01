@@ -21,7 +21,7 @@ class Tank(pygame.sprite.Sprite):
 
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.speed = 5
+        self.speed = 2
         self.upper = pygame.image.load(os.path.join('Images','tankUpper.png')).convert_alpha()
         self.lower = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
         self.image = pygame.image.load(os.path.join('Images','tankLower.png')).convert_alpha()
@@ -30,6 +30,8 @@ class Tank(pygame.sprite.Sprite):
         self.rect.y = y
         self.direction = 'up'
         self.target = 'up'
+        self.rush = False
+
 
     def turnRight(self):
         self.direction = Tank.toRight[self.direction]
