@@ -61,3 +61,7 @@ class Tank(pygame.sprite.Sprite):
     def display(self, display):
         display.blit(self.lower, (self.rect.x, self.rect.y))
         display.blit(self.upper, (self.rect.x, self.rect.y))
+
+    def setRush(self, value):
+        assert value in (True, False)
+        self.rush = value

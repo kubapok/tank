@@ -26,7 +26,6 @@ DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
 
 
-
 tank = Tank(100,100)
 tree1 = Tree(10,10)
 tree2 = Tree(300,150)
@@ -54,30 +53,9 @@ fences = [
 def run_game(task):
     while True:
         DISPLAYSURF.fill(WHITE)
-        '''
-        if (tank.rect.x == 300 and tank.rect.y == 100) or\
-            (tank.rect.x == 100 and tank.rect.y == 300) or\
-            (tank.rect.x == 300 and tank.rect.y == 300) or\
-            (tank.rect.x == 100 and tank.rect.y == 100):
-            tank.turnRight()
 
-        tank.move()
-        '''
-        '''
-        print(command.receivedFromUserEvent.is_set())
-        if command.receivedFromUserEvent.is_set():
-            tank.move()
-        '''
-
-        if task.value == 0:
-            tank.rush = False
-        elif task.value == 1:
-            tank.rush = True
-        elif task.value == 2:
-            tank.turnRight()
-        elif task.value == 3:
-            tank.turnLeft()
-        task.value = -1
+        if task.value != 0: eval(Command.CommandIntToUser[task.value][1])
+        task.value = 0
 
         if tank.rush:
             tank.move()
@@ -87,19 +65,11 @@ def run_game(task):
             sheep.turnIfCollide()
 
 
+        for target in Target.targets:
+            target.display(DISPLAYSURF)
 
 
 
-        for fence in fences:
-            fence.display(DISPLAYSURF)
-        for sheep in sheepes:
-            sheep.display(DISPLAYSURF)
-
-
-        tracks.display(DISPLAYSURF)
-        tree1.display(DISPLAYSURF)
-        tree2.display(DISPLAYSURF)
-        lake.display(DISPLAYSURF)
         tank.display(DISPLAYSURF)
 
         if (Train.exists == True):
@@ -114,7 +84,12 @@ def run_game(task):
                 train = Train(2)
                 train_wait = int(random.random()* FPS * max_train_wait)
 
-
+        '''
+        try:
+            Target.targets.remove(lake)
+        except:
+            pass
+        '''
         #print(pygame.sprite.collide_mask(tree2, tank))
 
         for event in pygame.event.get():
@@ -126,8 +101,8 @@ def run_game(task):
         fpsClock.tick(FPS)
 
 
-task = multiprocessing.Value('i',0)
-game = multiprocessing.Process(target=run_game, args=(task,))
+task = multiprocessing.Value('i',0) # sends command to game via integer number
+game = multiprocessing.Process(target=run_game, args=(task,)) #
 game.start()
 command = Command()
 
@@ -135,6 +110,5 @@ command = Command()
 while True:
     command.waitForCommand()
     if command.receivedFromUserEvent == True:
-        print('comand received')
         task.value = command.task
         command.receivedFromUserEvent = False

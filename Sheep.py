@@ -7,6 +7,9 @@ from rotate_center import *
 
 
 class Sheep(pygame.sprite.Sprite,Target):
+
+    jumpFromObstacle = 15
+
     def __init__(self,x,y,direction, speed = 1):
         assert (direction == 'left' or direction == 'right')
         pygame.sprite.Sprite.__init__(self)
@@ -52,4 +55,4 @@ class Sheep(pygame.sprite.Sprite,Target):
                 elif self.direction  == 'left':
                     self.direction = 'right'
                     self.image = self.imageRight
-                self.move(15)
+                self.move(Sheep.jumpFromObstacle)

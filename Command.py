@@ -4,21 +4,23 @@ import multiprocessing
 
 class Command():
 
-    def __init__(self, ):
-        self.receivedFromUserEvent = False
-        self.task = None
+
+    CommandIntToUser = []
+    CommandIntToUser.append([None,None])
+    CommandIntToUser.append(['stop','tank.setRush(False)'])
+    CommandIntToUser.append(['rush','tank.setRush(True)'])
+    CommandIntToUser.append(['right','tank.turnRight()'])
+    CommandIntToUser.append(['left','tank.turnLeft()'])
+    CommandIntToUser.append(['towerLeft','tank.towerLeft()'])
+    CommandIntToUser.append(['towerRight','tank.towerRight()'])
 
     def waitForCommand(self):
         message = input()
-        if message == 'rush':
-            self.receivedFromUserEvent = True
-            self.task = 1
-        elif message == 'stop':
-            self.receivedFromUserEvent = True
-            self.task = 0
-        elif message == 'right':
-            self.receivedFromUserEvent = True
-            self.task = 2
-        elif message == 'left':
-            self.receivedFromUserEvent = True
-            self.task = 3
+
+        try:
+            self.task = [x[0] for x in Command.CommandIntToUser].index(message)
+            print('Command received')
+        except ValueError:
+            print('Repeat command, please')
+
+        self.receivedFromUserEvent = True
