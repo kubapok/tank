@@ -17,7 +17,6 @@ pygame.init()
 FPS = 30
 WHITE = (255, 255, 255)
 #ERRORDISPLAY = 1
-max_train_wait = 30 # maximum time we can wait for new train after old one is gone
 WIDTH = 900
 HEIGHT = 600
 
@@ -49,8 +48,10 @@ fences = [
     Fence(770,300,5),
     Fence(855,310,6)
 ]
+train = Train(FPS)
 
 def run_game(task):
+    train_wait = -1
     while True:
         DISPLAYSURF.fill(WHITE)
 
@@ -68,25 +69,19 @@ def run_game(task):
         for target in Target.targets:
             target.display(DISPLAYSURF)
 
-
-
         tank.display(DISPLAYSURF)
 
-        if (Train.exists == True):
-            train.move()
-            train.display(DISPLAYSURF)
-        else:
-            try:
-                train_wait -= 1
-            except NameError:
-                train_wait = int(random.random()* FPS * max_train_wait)
-            if train_wait < 0:
-                train = Train(2)
-                train_wait = int(random.random()* FPS * max_train_wait)
-
+        train.move()
+        train.display(DISPLAYSURF)
         '''
         try:
-            Target.targets.remove(lake)
+            Target.targets.remove(train)
+        except:
+            pass
+        '''
+        '''
+        try:
+            Target.remove(train)
         except:
             pass
         '''

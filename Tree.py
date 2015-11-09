@@ -3,6 +3,7 @@
 import pygame
 import os
 from Target import *
+from rotate_center import *
 
 
 class Tree(pygame.sprite.Sprite):

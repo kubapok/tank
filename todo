@@ -11,3 +11,9 @@ wielowątkowość
 
 NA 13.11
 zrobic sterowanie czołgiem za pomocą konsoli
+
+
+zrobic, zeby pociag dziala
+train wait i wszystko zrobic w klasie Train
+
+jak wyjedzie poza granice to wywalic z TargetList i zrobic nowe

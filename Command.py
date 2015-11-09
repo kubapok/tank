@@ -4,7 +4,6 @@ import multiprocessing
 
 class Command():
 
-
     CommandIntToUser = []
     CommandIntToUser.append([None,None])
     CommandIntToUser.append(['stop','tank.setRush(False)'])

@@ -2,37 +2,46 @@
 
 import pygame
 import os
+import random
 from Target import *
 
+class Train(pygame.sprite.Sprite):
 
-class Train(pygame.sprite.Sprite, Target):
 
-    exists = False
-
-    def __init__(self, speed):
+    speed = 2
+    maxWait = 30 # maximum time we can wait for new train after old one is gone
+    def __init__(self, FPS, speed = 2):
         pygame.sprite.Sprite.__init__(self)
-        Target.__init__(self,True)
         self.image= pygame.image.load(os.path.join('Images','train.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = Train.coord[0][0], Train.coord[0][1]
         self.coord = Train.coord
         self.moveStep = 0
-        self.speed = speed
-        Train.exists = True
+        self.speed = Train.speed
+        self.exits = True
+        Train.FPS = FPS
+        self.wait = Train.getWait()
 
-    def __del__(self):
-        Train.exists = False
-
+    def getWait():
+        return int( random.random()*Train.FPS* Train.maxWait)
 
     def display(self, display):
         display.blit(self.image, (self.rect.x, self.rect.y))
         self.rect.x, self.rect.y = Train.coord[self.moveStep][0], Train.coord[self.moveStep][1]
+
     def move(self):
-        if self.moveStep < len(Train.coord) - self.speed:
-            self.moveStep += self.speed
+        print(self.wait)
+        if self.wait < 0:
+            if self.moveStep < len(Train.coord) - self.speed:
+                self.moveStep += self.speed
+            else:
+                self.wait = Train.getWait()
+                self.moveStep = 0
         else:
-            Train.exists = False
-            self.kill()
+            self.wait -= 1
+
+
+
 
         '''
             try:
