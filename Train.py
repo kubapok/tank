@@ -7,17 +7,15 @@ from Target import *
 
 class Train(pygame.sprite.Sprite):
 
-
-    speed = 2
     maxWait = 30 # maximum time we can wait for new train after old one is gone
-    def __init__(self, FPS, speed = 2):
+    def __init__(self, FPS):
         pygame.sprite.Sprite.__init__(self)
         self.image= pygame.image.load(os.path.join('Images','train.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = Train.coord[0][0], Train.coord[0][1]
         self.coord = Train.coord
         self.moveStep = 0
-        self.speed = Train.speed
+        self.speed = Train.getSpeed()
         self.exits = True
         Train.FPS = FPS
         self.wait = Train.getWait()
@@ -25,32 +23,24 @@ class Train(pygame.sprite.Sprite):
     def getWait():
         return int( random.random()*Train.FPS* Train.maxWait)
 
+    def getSpeed():
+         return  int(random.random()*3) + 1
+
     def display(self, display):
         display.blit(self.image, (self.rect.x, self.rect.y))
         self.rect.x, self.rect.y = Train.coord[self.moveStep][0], Train.coord[self.moveStep][1]
 
     def move(self):
-        print(self.wait)
         if self.wait < 0:
             if self.moveStep < len(Train.coord) - self.speed:
                 self.moveStep += self.speed
             else:
                 self.wait = Train.getWait()
                 self.moveStep = 0
+                self.speed = Train.getSpeed()
         else:
             self.wait -= 1
 
-
-
-
-        '''
-            try:
-                # -30 to x and -13 is correction to fit train to tracks
-                self.moveStep += 1
-            except IndexError:
-                #self.rect.x  =
-                pass
-        '''
 
     coord = [
 [969, 133],

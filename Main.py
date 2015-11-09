@@ -24,7 +24,6 @@ fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
 
-
 tank = Tank(100,100)
 tree1 = Tree(10,10)
 tree2 = Tree(300,150)
@@ -48,6 +47,7 @@ fences = [
     Fence(770,300,5),
     Fence(855,310,6)
 ]
+
 train = Train(FPS)
 
 def run_game(task):
@@ -67,24 +67,14 @@ def run_game(task):
 
 
         for target in Target.targets:
+            Target.detectCollison(target, tank)
             target.display(DISPLAYSURF)
 
         tank.display(DISPLAYSURF)
 
         train.move()
         train.display(DISPLAYSURF)
-        '''
-        try:
-            Target.targets.remove(train)
-        except:
-            pass
-        '''
-        '''
-        try:
-            Target.remove(train)
-        except:
-            pass
-        '''
+
         #print(pygame.sprite.collide_mask(tree2, tank))
 
         for event in pygame.event.get():

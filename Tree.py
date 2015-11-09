@@ -11,7 +11,7 @@ class Tree(pygame.sprite.Sprite):
 	treeDark = pygame.image.load(os.path.join('Images','treeDark.png'))
 
 	def __init__(self,x,y, color = 'dark'):
-		#assert color in ('dark', 'light')
+		assert color in ('dark', 'light')
 		pygame.sprite.Sprite.__init__(self)
 		Target.__init__(self, True)
 		self.image =  pygame.image.load(os.path.join('Images','treeDark.png')).convert_alpha()
