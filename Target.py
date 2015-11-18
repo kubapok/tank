@@ -6,21 +6,26 @@ import random
 
 class Target():
     targets = []
-    destroyed = []
-    displayFlash = 15
 
     def __init__(self,destroyable):
+        self.targetName = None
         self.destroyable = destroyable
         Target.targets.append(self)
 
 
     def delete(target):
-        flash = Destroyed(target.rect.x - target.image.get_rect().centerx,target.rect.y - target.image.get_rect().centery)
-        Target.targets.remove(target)
+        if target.targetName == 'train':
+            target.kill()
+            flash = Destroyed(target.rect.x - target.image.get_rect().centerx + 90 ,
+            target.rect.y - target.image.get_rect().centery + 90)
+        else:
+            flash = Destroyed(target.rect.x - target.image.get_rect().centerx,target.rect.y - target.image.get_rect().centery)
+            Target.targets.remove(target)
 
     def detectCollison(target, tank):
         if (target.destroyable == True) and pygame.sprite.collide_mask(target, tank):
-            Target.delete(target)
+            return True
+            
 
 class Destroyed(pygame.sprite.Sprite,Target):
     destroyed = []

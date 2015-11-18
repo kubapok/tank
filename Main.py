@@ -52,7 +52,14 @@ train = Train(FPS)
 
 def run_game(task):
     train_wait = -1
+    licznik = 300
     while True:
+        if licznik:
+            licznik -= 1
+        else:
+            #print(tank.aim)
+            licznik = 300
+
         DISPLAYSURF.fill(WHITE)
 
         if task.value != 0: eval(Command.CommandIntToUser[task.value][1])
@@ -67,7 +74,12 @@ def run_game(task):
 
 
         for target in Target.targets:
-            Target.detectCollison(target, tank)
+            if Target.detectCollison(target, tank):
+                Target.delete(target)
+            for bullet in Bullet.bullets:
+                if Target.detectCollison(target, bullet):
+                    Target.delete(target)
+                    bullet.remove()
 
         for target in Target.targets:
             target.display(DISPLAYSURF)
@@ -75,6 +87,9 @@ def run_game(task):
         for flash in Destroyed.destroyed:
             flash.display(DISPLAYSURF)
 
+        for bullet in Bullet.bullets:
+            bullet.move()
+            bullet.display(DISPLAYSURF)
 
         tank.display(DISPLAYSURF)
 
