@@ -68,7 +68,13 @@ def run_game(task):
 
         for target in Target.targets:
             Target.detectCollison(target, tank)
+
+        for target in Target.targets:
             target.display(DISPLAYSURF)
+
+        for flash in Destroyed.destroyed:
+            flash.display(DISPLAYSURF)
+
 
         tank.display(DISPLAYSURF)
 

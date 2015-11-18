@@ -13,6 +13,9 @@ class Command():
     CommandIntToUser.append(['towerLeft','tank.towerLeft()'])
     CommandIntToUser.append(['towerRight','tank.towerRight()'])
 
+    def __init__(self):
+        self.task = 0
+
     def waitForCommand(self):
         message = input()
 
@@ -20,6 +23,7 @@ class Command():
             self.task = [x[0] for x in Command.CommandIntToUser].index(message)
             print('Command received')
         except ValueError:
+            self.task = 0
             print('Repeat command, please')
 
         self.receivedFromUserEvent = True
