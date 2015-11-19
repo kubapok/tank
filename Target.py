@@ -25,7 +25,7 @@ class Target():
     def detectCollison(target, tank):
         if (target.destroyable == True) and pygame.sprite.collide_mask(target, tank):
             return True
-            
+
 
 class Destroyed(pygame.sprite.Sprite,Target):
     destroyed = []
@@ -38,7 +38,6 @@ class Destroyed(pygame.sprite.Sprite,Target):
         self.displayFlash = Destroyed.displayFlashTime + int(random.random()*2*Destroyed.displayFlashTimeShift) - Destroyed.displayFlashTimeShift
         self.image = pygame.image.load(os.path.join('Images','flash.png')).convert_alpha()
         self.rect = self.image.get_rect()
-        print(self.image.get_rect().centerx)
         self.rect.x = x
         self.rect.y = y
         Destroyed.destroyed.append(self)

@@ -49,6 +49,8 @@ fences = [
 ]
 
 train = Train(FPS)
+ammobox = AmmoBox(25, 530)
+fuel = Fuel(110, 530)
 
 def run_game(task):
     train_wait = -1
@@ -57,7 +59,6 @@ def run_game(task):
         if licznik:
             licznik -= 1
         else:
-            #print(tank.aim)
             licznik = 300
 
         DISPLAYSURF.fill(WHITE)
@@ -96,7 +97,12 @@ def run_game(task):
         train.move()
         train.display(DISPLAYSURF)
 
-        #print(pygame.sprite.collide_mask(tree2, tank))
+
+        ammobox.refillAmmoIfCollison(tank)
+        ammobox.display(DISPLAYSURF)
+
+        fuel.refillFuelIfCollison(tank)
+        fuel.display(DISPLAYSURF)
 
         for event in pygame.event.get():
 

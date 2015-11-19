@@ -19,6 +19,9 @@ class Tank(pygame.sprite.Sprite):
                 'down' : 'left',
                 'left' : 'up'  }
 
+    ammo = 5
+    fuel = 100
+
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
         self.speed = 2
@@ -31,6 +34,8 @@ class Tank(pygame.sprite.Sprite):
         self.direction = 'up'
         self.aim = 'up'
         self.rush = False
+        self.ammo = Tank.ammo
+        self.fuel = Tank.fuel
 
     def turnRight(self):
         self.direction = Tank.toRight[self.direction]
@@ -49,14 +54,20 @@ class Tank(pygame.sprite.Sprite):
         self.aim = Tank.toLeft[self.aim]
         self.upper = rotate_center(self.upper, 90)
     def move(self):
-        if self.direction == 'up':
-            self.rect.y -= self.speed
-        elif self.direction == 'right':
-            self.rect.x += self.speed
-        elif self.direction == 'down':
-            self.rect.y += self.speed
-        elif self.direction == 'left':
-            self.rect.x -= self.speed
+        if self.fuel > 0:
+            self.fuel -= 1
+            if self.direction == 'up':
+                self.rect.y -= self.speed
+            elif self.direction == 'right':
+                self.rect.x += self.speed
+            elif self.direction == 'down':
+                self.rect.y += self.speed
+            elif self.direction == 'left':
+                self.rect.x -= self.speed
+        else:
+            print("You don't have any fuel!")
+            self.rush = False
+
     def display(self, display):
         display.blit(self.lower, (self.rect.x, self.rect.y))
         display.blit(self.upper, (self.rect.x, self.rect.y))
@@ -66,7 +77,11 @@ class Tank(pygame.sprite.Sprite):
         self.rush = value
 
     def shoot(self):
-        shoot = Bullet(self.rect.x, self.rect.y, self.aim)
+        if self.ammo > 0:
+            shoot = Bullet(self.rect.x, self.rect.y, self.aim)
+            self.ammo -= 1
+        else:
+            print("you don't have enough ammo")
 
 class Bullet(pygame.sprite.Sprite):
     bullets = []
@@ -75,7 +90,6 @@ class Bullet(pygame.sprite.Sprite):
 
     def __init__(self,x,y, aim):
         self.image = pygame.image.load(os.path.join('Images','bullet.png')).convert_alpha()
-        print(aim)
         if aim == 'up':
             pass
         elif aim == 'right':
@@ -116,3 +130,34 @@ class Bullet(pygame.sprite.Sprite):
 
     def remove(self):
         Bullet.bullets.remove(self)
+
+
+class AmmoBox(pygame.sprite.Sprite):
+    def __init__(self,x,y):
+        pygame.sprite.Sprite.__init__(self)
+        self.image= pygame.image.load(os.path.join('Images','ammobox.png')).convert_alpha()
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+    def display(self, display):
+        display.blit(self.image, (self.rect.x, self.rect.y))
+    def refillAmmoIfCollison(self, tank):
+        if pygame.sprite.collide_mask(self, tank) and tank.ammo != Tank.ammo:
+            tank.ammo = Tank.ammo
+            print('Ammo refilled')
+
+
+class Fuel(pygame.sprite.Sprite):
+    margin = 30
+    def __init__(self,x,y):
+        pygame.sprite.Sprite.__init__(self)
+        self.image= pygame.image.load(os.path.join('Images','fuel.png')).convert_alpha()
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+    def display(self, display):
+        display.blit(self.image, (self.rect.x, self.rect.y))
+    def refillFuelIfCollison(self, tank):
+        if pygame.sprite.collide_mask(self, tank) and tank.fuel < Tank.fuel - Fuel.margin:
+            tank.fuel = Tank.fuel
+            print('Fuel refilled')
