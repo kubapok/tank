@@ -14,12 +14,16 @@ class Target():
 
 
     def delete(target):
-        if target.targetName == 'train': target.kill()
-        if not target.targetName == 'sheep':
+        if target.targetName == 'train':
+            target.kill()
             flash = Destroyed(target.rect.x + target.image.get_rect().centerx,target.rect.y + target.image.get_rect().centery)
-        else:
+        elif target.targetName == 'sheep':
             blood = Destroyed(target.rect.x + target.image.get_rect().centerx,target.rect.y + target.image.get_rect().centery, blood = True)
-        Target.targets.remove(target)
+            Target.targets.remove(target)
+        else:
+            flash = Destroyed(target.rect.x + target.image.get_rect().centerx,target.rect.y + target.image.get_rect().centery)
+            Target.targets.remove(target)
+
 
     def detectCollison(target, tank):
         if (target.destroyable == True) and pygame.sprite.collide_mask(target, tank):
@@ -30,11 +34,11 @@ class Destroyed(pygame.sprite.Sprite,Target):
     destroyed = []
     displayFlashTime = 15
     displayFlashTimeShift = 15
-    displayFlashPosShift = 15
+    displayFlashPosShift = 20
 
     def __init__(self,x,y, blood = False):
         pygame.sprite.Sprite.__init__(self)
-        self.displayFlash = Destroyed.displayFlashTime + int(random.random()*2*Destroyed.displayFlashTimeShift) - Destroyed.displayFlashTimeShift
+        self.displayFlash = Destroyed.displayFlashTime + int(random.random()*2*Destroyed.displayFlashTimeShift)
         if blood == False:
             self.image = pygame.image.load(os.path.join('Images','flash.png')).convert_alpha()
         else:
@@ -43,6 +47,7 @@ class Destroyed(pygame.sprite.Sprite,Target):
         self.rect.x = x - self.image.get_rect().centerx
         self.rect.y = y - self.image.get_rect().centery
         Destroyed.destroyed.append(self)
+        print(self.displayFlash)
 
     def delete(destroyed):
         Destroyed.destroyed.remove(destroyed)
