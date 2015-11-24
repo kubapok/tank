@@ -11,11 +11,14 @@ from Tracks import *
 from Sheep import *
 from Fence import *
 from Command import *
+from Boat import *
+from Path import *
 
 pygame.init()
 
 FPS = 30
 WHITE = (255, 255, 255)
+YELLOW = (200,200,0)
 #ERRORDISPLAY = 1
 WIDTH = 900
 HEIGHT = 600
@@ -24,11 +27,17 @@ fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
 
-tank = Tank(100,100)
-tree1 = Tree(10,10)
-tree2 = Tree(300,150)
+tank = Tank(300,500)
 lake = Lake(0,0)
+path = Path(0,0)
 tracks = Tracks(0,0)
+
+trees = []
+for t in range(30):
+    if random.random() > 0.5:
+        trees.append(Tree( int(random.random()*400), int(random.random()*200),'light'))
+    else:
+        trees.append(Tree(int(random.random()*400), int(random.random()*200),'dark'))
 
 sheepes = [ #XD
     Sheep(800,390, 'left'),
@@ -48,6 +57,11 @@ fences = [
     Fence(855,310,6)
 ]
 
+boats = [
+    Boat(800,10),
+    Boat(700,30, pos = 'right')
+]
+
 train = Train(FPS)
 ammobox = AmmoBox(25, 530)
 fuel = Fuel(110, 530)
@@ -61,7 +75,7 @@ def run_game(task):
         else:
             licznik = 300
 
-        DISPLAYSURF.fill(WHITE)
+        DISPLAYSURF.fill(YELLOW)
 
         if task.value != 0: eval(Command.CommandIntToUser[task.value][1])
         task.value = 0

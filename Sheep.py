@@ -14,6 +14,7 @@ class Sheep(pygame.sprite.Sprite,Target):
         assert (direction == 'left' or direction == 'right')
         pygame.sprite.Sprite.__init__(self)
         Target.__init__(self,True)
+        self.targetName = 'sheep'
         self.imageRight= pygame.image.load(os.path.join('Images','sheep.png')).convert_alpha()
         self.imageLeft= pygame.transform.flip(self.imageRight, True, False)
         if direction == 'left':

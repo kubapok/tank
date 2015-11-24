@@ -13,6 +13,7 @@ class Command():
     CommandIntToUser.append(['towerLeft','tank.towerLeft()'])
     CommandIntToUser.append(['towerRight','tank.towerRight()'])
     CommandIntToUser.append(['fire','tank.shoot()'])
+    CommandIntToUser.append(['exit','sys.exit()'])
 
     def __init__(self):
         self.task = 0
