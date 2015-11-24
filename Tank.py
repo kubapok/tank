@@ -20,7 +20,7 @@ class Tank(pygame.sprite.Sprite):
                 'left' : 'up'  }
 
     ammo = 5
-    fuel = 100
+    fuel = 10000
 
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
@@ -86,7 +86,7 @@ class Tank(pygame.sprite.Sprite):
 class Bullet(pygame.sprite.Sprite):
     bullets = []
     speed = 15
-    existTime = 10000
+    existTime = 900 // speed
 
     def __init__(self,x,y, aim):
         self.image = pygame.image.load(os.path.join('Images','bullet.png')).convert_alpha()
@@ -120,12 +120,13 @@ class Bullet(pygame.sprite.Sprite):
             self.rect.x -= Bullet.speed
         else:
             assert False
+        if self.existTime < 0:
+            self.remove()
+        else:
+            self.existTime -= 1
 
     def display(self, display):
         display.blit(self.image, (self.rect.x, self.rect.y))
-        self.existTime -= 1
-        if self.existTime <=0:
-            self.remove()
 
 
     def remove(self):
