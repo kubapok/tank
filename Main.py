@@ -13,6 +13,7 @@ from Fence import *
 from Command import *
 from Boat import *
 from Path import *
+from House import *
 
 pygame.init()
 
@@ -31,13 +32,19 @@ tank = Tank(300,500)
 lake = Lake(0,0)
 path = Path(0,0)
 tracks = Tracks(0,0)
+house = House(610, 240)
 
+
+def make_trees(trees,quantity,min_x,max_x,min_y,max_y):
+    for t in range(quantity):
+        trees.append(Tree(  int(random.random()*(max_x-min_x)) + min_x,
+                            int(random.random()*(max_y-min_y)) + min_y,
+                            'light' if random.random() > 0.5 else 'dark'
+                            ))
 trees = []
-for t in range(30):
-    if random.random() > 0.5:
-        trees.append(Tree( int(random.random()*400), int(random.random()*200),'light'))
-    else:
-        trees.append(Tree(int(random.random()*400), int(random.random()*200),'dark'))
+make_trees(trees,30,0,400,0,200)
+make_trees(trees,15,0,180,300,480)
+
 
 sheepes = [ #XD
     Sheep(800,390, 'left'),

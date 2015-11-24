@@ -10,6 +10,7 @@ class Fence(pygame.sprite.Sprite, Target):
         pygame.sprite.Sprite.__init__(self)
         Target.__init__(self,True)
         image = 'fence' + str(version) + '.png'
+        self.targetName = 'fence'
         try:
             self.image= pygame.image.load(os.path.join('Images',image)).convert_alpha()
         except pygame.error:

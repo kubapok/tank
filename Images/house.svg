@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64px"
+   height="64px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="house.svg"
+   inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/train.png"
+   inkscape:export-xdpi="178.88181"
+   inkscape:export-ydpi="178.88181">
+  <defs
+     id="defs2987">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5052"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5046"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5052-8"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5046-7"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.8225824"
+     inkscape:cx="23.661513"
+     inkscape:cy="30.31473"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:document-units="px"
+     inkscape:grid-bbox="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <rect
+       style="fill:#b3b3b3;fill-opacity:1;stroke:#b3b3b3;stroke-width:3.44400000999999989;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:100;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3066"
+       width="50.493061"
+       height="37.268688"
+       x="6.6980586"
+       y="19.002783"
+       ry="0.72865278"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:#ff0000;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 2.6717268,19.066414 60.235294,18.823529 34.489564,-3.0360532 z"
+       id="path3084"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 5.1005693,16.880455 C 6.0721063,17.12334 57.199241,15.787476 57.199241,15.787476"
+       id="path3086"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 8.743833,16.516129 7.1650854,19.309298"
+       id="path3088"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 12.994307,16.759013 11.41556,19.916508"
+       id="path3090"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 9.71537,13.480076 51.855788,11.051233"
+       id="path3092"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 16.759013,13.115749 15.787476,17.12334"
+       id="path3094"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 11.779886,13.358634 -0.971537,3.278937"
+       id="path3096"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 18.944972,16.880455 17.12334,19.43074"
+       id="path3098"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 22.223909,13.237192 21.73814,16.516129"
+       id="path3100"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 25.624288,16.637571 -1.214421,2.671727"
+       id="path3102"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 29.388994,12.751423 -0.850095,3.764706"
+       id="path3104"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 32.789374,16.273245 31.332068,19.43074"
+       id="path3106"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 36.371917,12.447818 -0.667932,3.703985"
+       id="path3108"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 39.043643,15.969639 -1.092979,3.521822"
+       id="path3110"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 43.537002,11.658444 -1.760911,4.493359"
+       id="path3112"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 46.026566,16.637571 0.182163,2.793169"
+       id="path3114"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 48.273245,11.476281 0.485768,4.250474"
+       id="path3116"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 53.677419,16.03036 0.242885,2.975333"
+       id="path3118"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 17.088638,8.0969697 47.916883,8.0110971"
+       id="path3120"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 45.684197,8.4404599 -0.08587,2.4903041"
+       id="path3122"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 40.703589,8.0969697 39.758991,11.875362"
+       id="path3124"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 32.631569,8.0110971 0.515235,3.8642649"
+       id="path3126"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 27.221598,8.3545873 25.332402,12.648215"
+       id="path3128"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 19.235451,8.3545873 0.08587,4.6371177"
+       id="path3130"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 22.791795,4.0609598 42.885972,3.6315971"
+       id="path3132"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 42.850403,3.9750873 0,4.1218824"
+       id="path3134"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 37.69805,3.7174696 35.808854,7.839352"
+       id="path3136"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 30.227138,3.8892147 30.31301,7.839352"
+       id="path3138"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.872569,7.7534795 0.68698,-3.5207746"
+       id="path3140"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 30.481973,-0.66793179 7.893739,0.54648957"
+       id="path3142"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 34.671727,0.06072096 33.70019,3.7039847"
+       id="path3144"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.15443218px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 31.740621,0.07721598 29.041164,3.6267686"
+       id="path3146"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.14900613px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 37.312172,-0.18686252 37.679039,3.4975757"
+       id="path3148"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-y="0.68381969"
+       inkscape:transform-center-x="0.394337"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.10193264000000002px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 44.245047,4.9468933 0.43931,-5.26025345 5.735401,2.25439435 -0.726067,7.3894036 z"
+       id="path3150"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <rect
+       style="fill:#550000;fill-opacity:1;stroke:#550000;stroke-width:3.44400000999999989;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:100;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3920"
+       width="12.193902"
+       height="14.340716"
+       x="26.277"
+       y="41.844883"
+       ry="0.72865278"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.244;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:100;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3922"
+       width="12.709138"
+       height="8.3296375"
+       x="9.8753433"
+       y="23.983391"
+       ry="0.72865278"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.3;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:100;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3924"
+       width="16.916893"
+       height="9.961216"
+       x="36.238216"
+       y="23.124666"
+       ry="0.72865278"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 16.516129,24.166983 -0.364326,8.01518"
+       id="path3926"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 10.201139,27.931689 22.83112,28.660342"
+       id="path3928"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 36.432638,27.567362 17.244781,0.364327"
+       id="path3930"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 44.56926,33.396584 44.812144,22.952562"
+       id="path3932"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kuba/Documents/INFORMATYKA 2 ROK/KCK/CW/tank/Images/house.png"
+       inkscape:export-xdpi="178"
+       inkscape:export-ydpi="178" />
+  </g>
+</svg>

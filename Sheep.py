@@ -49,7 +49,7 @@ class Sheep(pygame.sprite.Sprite,Target):
             return
 
         for target in Target.targets:
-            if target != self and pygame.sprite.collide_mask(self, target):
+            if target.targetName in ('fence', 'sheep') and target != self and pygame.sprite.collide_mask(self, target) :
                 if self.direction == 'right':
                     self.direction = 'left'
                     self.image = self.imageLeft

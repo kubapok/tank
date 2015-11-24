@@ -47,7 +47,6 @@ class Destroyed(pygame.sprite.Sprite,Target):
         self.rect.x = x - self.image.get_rect().centerx
         self.rect.y = y - self.image.get_rect().centery
         Destroyed.destroyed.append(self)
-        print(self.displayFlash)
 
     def delete(destroyed):
         Destroyed.destroyed.remove(destroyed)
