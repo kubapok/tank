@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
-import pygame, sys, random, multiprocessing
+import pygame, sys, random
 from pygame.locals import *
+import multiprocessing
+#from multiprocessing import Process, Queue
 
 from Tank import *
 from Tree import *
@@ -10,7 +12,6 @@ from Lake import *
 from Tracks import *
 from Sheep import *
 from Fence import *
-from Command import *
 from Boat import *
 from Path import *
 from House import *
@@ -73,22 +74,59 @@ train = Train(FPS)
 ammobox = AmmoBox(25, 530)
 fuel = Fuel(110, 530)
 
-def run_game(task):
+
+def run_game(userInput,received):
+    tasklist = []
+
+    def go(distance):
+        return ['tank.move()'] * (distance // tank.speed)
+
+    def shoot():
+        return ['tank.shoot()']
+
+    def turnRight():
+        return ['tank.turnRight()']
+
+    def towerRight():
+        return ['tank.towerRight()']
+
+    def killHouse():
+        newList = []
+        for target in Target.targets:
+            if  target.targetName == 'house':
+                x,y = target.rect.x, target.rect.y
+                if tank.rect.y > y and tank.direction == 'up':
+                    print(tank.rect.y-y)
+                    return go(tank.rect.y - y) + towerRight() + shoot() + ['print(tank.rect.y)']
+                else:
+                    return []
+
+
     train_wait = -1
     licznik = 300
     while True:
-        if licznik:
+        if licznik: # nie wiem co to robi, ale boje sie na razie usunac
             licznik -= 1
         else:
             licznik = 300
 
         DISPLAYSURF.fill(YELLOW)
 
-        if task.value != 0: eval(Command.CommandIntToUser[task.value][1])
-        task.value = 0
+        if received.value:
+            massage = UserInput.get()
+            if massage == 'go':
+                tasklist = go(50)
+            elif massage == 'shoot':
+                tasklist = shoot()
+            elif massage == 'kill house':
+                tasklist = killHouse()
 
-        if tank.rush:
-            tank.move()
+
+            received.value = 0
+
+
+        if tasklist != []: eval(tasklist.pop(0))
+
 
         for sheep in sheepes:
             sheep.move()
@@ -134,14 +172,13 @@ def run_game(task):
         fpsClock.tick(FPS)
 
 
-task = multiprocessing.Value('i',0) # sends command to game via integer number
-game = multiprocessing.Process(target=run_game, args=(task,)) #
+UserInput = multiprocessing.Queue()
+received = multiprocessing.Value('i',0)
+game = multiprocessing.Process(target=run_game, args=(UserInput,received,))
 game.start()
-command = Command()
-
 
 while True:
-    command.waitForCommand()
-    if command.receivedFromUserEvent == True:
-        task.value = command.task
-        command.receivedFromUserEvent = False
+    massage = input()
+    if massage:
+        received.value = 1
+        UserInput.put(massage)

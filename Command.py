@@ -1,31 +1,10 @@
 #!/usr/bin/python3
+from Tank import *
 
-import multiprocessing
-
-class Command():
-
-    CommandIntToUser = []
-    CommandIntToUser.append([None,None])
-    CommandIntToUser.append(['stop','tank.setRush(False)'])
-    CommandIntToUser.append(['rush','tank.setRush(True)'])
-    CommandIntToUser.append(['right','tank.turnRight()'])
-    CommandIntToUser.append(['left','tank.turnLeft()'])
-    CommandIntToUser.append(['towerLeft','tank.towerLeft()'])
-    CommandIntToUser.append(['towerRight','tank.towerRight()'])
-    CommandIntToUser.append(['fire','tank.shoot()'])
-    CommandIntToUser.append(['exit','sys.exit()'])
+class Task():
 
     def __init__(self):
-        self.task = 0
+        self.list = []
 
-    def waitForCommand(self):
-        message = input()
-
-        try:
-            self.task = [x[0] for x in Command.CommandIntToUser].index(message)
-            print('Command received')
-        except ValueError:
-            self.task = 0
-            print('Repeat command, please')
-
-        self.receivedFromUserEvent = True
+    def go(distance)
+        tank.rush()
