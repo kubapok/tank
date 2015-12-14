@@ -8,7 +8,7 @@ from Target import *
 class Fence(pygame.sprite.Sprite, Target):
     def __init__(self,x,y,version):
         pygame.sprite.Sprite.__init__(self)
-        Target.__init__(self,True)
+        Target.__init__(self,True,'fence')
         image = 'fence' + str(version) + '.png'
         self.targetName = 'fence'
         try:

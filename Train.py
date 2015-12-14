@@ -10,7 +10,7 @@ class Train(pygame.sprite.Sprite, Target):
     maxWait = 1 # 30# maximum time we can wait for new train after old one is gone
     def __init__(self, FPS):
         pygame.sprite.Sprite.__init__(self)
-        Target.__init__(self, True)
+        Target.__init__(self, True,'train')
         self.image= pygame.image.load(os.path.join('Images','train.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = Train.coord[0][0], Train.coord[0][1]

@@ -53,6 +53,8 @@ class Tank(pygame.sprite.Sprite):
     def towerLeft(self):
         self.aim = Tank.toLeft[self.aim]
         self.upper = rotate_center(self.upper, 90)
+
+
     def move(self):
         if self.fuel > 0:
             self.fuel -= 1
@@ -82,6 +84,9 @@ class Tank(pygame.sprite.Sprite):
             self.ammo -= 1
         else:
             print("you don't have enough ammo")
+
+    def wait(self):
+        pass
 
 class Bullet(pygame.sprite.Sprite):
     bullets = []

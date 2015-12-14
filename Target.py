@@ -7,8 +7,8 @@ import random
 class Target():
     targets = []
 
-    def __init__(self,destroyable):
-        self.targetName = None
+    def __init__(self,destroyable,name):
+        self.targetName = name
         self.destroyable = destroyable
         Target.targets.append(self)
 

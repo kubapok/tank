@@ -15,7 +15,7 @@ class Boat(pygame.sprite.Sprite, Target):
     def __init__(self,x,y,pos = 'left'):
         assert pos in ('left', 'right')
         pygame.sprite.Sprite.__init__(self)
-        Target.__init__(self, True)
+        Target.__init__(self, True,'boat')
         if pos == 'left':
             self.image =  Boat.boatLeft
         else:

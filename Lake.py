@@ -8,7 +8,7 @@ from Target import *
 class Lake(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        Target.__init__(self, False)
+        Target.__init__(self, False,'lake')
         self.image= pygame.image.load(os.path.join('Images','lake.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = x
