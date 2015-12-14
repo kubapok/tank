@@ -121,7 +121,13 @@ def run_game(userInput,received):
                 tasklist = Tasks.shootTarget('tree', tank, Target.targets)
             elif massage == 'shoot boat':
                 tasklist = Tasks.shootTarget('boat', tank, Target.targets)
+            elif massage == 'refill ammo':
+                tasklist = Tasks.refillAmmo(tank, Target.targets)
+            elif massage == 'refill fuel':
+                tasklist= Tasks.refillFuel(tank, Target.targets)
+
             received.value = 0
+
 
 
         if tasklist != []: eval(tasklist.pop(0))

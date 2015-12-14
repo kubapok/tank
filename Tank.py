@@ -3,6 +3,7 @@
 import pygame
 import os
 from rotate_center import *
+from Target import *
 
 class Tank(pygame.sprite.Sprite):
     '''represents a tank,
@@ -138,9 +139,10 @@ class Bullet(pygame.sprite.Sprite):
         Bullet.bullets.remove(self)
 
 
-class AmmoBox(pygame.sprite.Sprite):
+class AmmoBox(pygame.sprite.Sprite, Target):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
+        Target.__init__(self,False,'ammo')
         self.image= pygame.image.load(os.path.join('Images','ammobox.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -153,10 +155,11 @@ class AmmoBox(pygame.sprite.Sprite):
             print('Ammo refilled')
 
 
-class Fuel(pygame.sprite.Sprite):
+class Fuel(pygame.sprite.Sprite, Target):
     margin = 30
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
+        Target.__init__(self,False,'fuel')
         self.image= pygame.image.load(os.path.join('Images','fuel.png')).convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = x

@@ -95,7 +95,7 @@ def rideOver(name, tank, targets):
     elif tank.rect.x >= x:
         if tank.rect.y > y: # czolg jest nad
             newList += turnLeft()
-        elif tank.rect.y < y:
+        elif tank.rect.y <= y:#!!!!!!!!!!!!!!!!!!
             newList += turnRight()
         else:
             assert False
@@ -114,7 +114,6 @@ def shootTarget(name, tank, targets):
     newList = []
     for item in targets:
         print(item.targetName)
-        #nonlocal target
         if  item.targetName == name:
             target = item
             break
@@ -191,5 +190,10 @@ def shootTarget(name, tank, targets):
 
     newList += wait()
     newList += shoot()
-
     return newList
+
+def refillAmmo(tank, targets):
+    return rideOver('ammo', tank, targets)
+
+def refillFuel(tank, targets):
+    return rideOver('fuel', tank, targets)
