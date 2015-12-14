@@ -87,7 +87,13 @@ def run_game(userInput,received):
     def turnRight():
         return ['tank.turnRight()']
 
+    def turnLeft():
+        return ['tank.turnLeft)']
+
     def towerRight():
+        return ['tank.towerRight()']
+
+    def towerLeft():
         return ['tank.towerRight()']
 
     def killHouse():
@@ -97,9 +103,11 @@ def run_game(userInput,received):
                 x,y = target.rect.x, target.rect.y
                 if tank.rect.y > y and tank.direction == 'up':
                     print(tank.rect.y-y)
-                    return go(tank.rect.y - y) + towerRight() + shoot() + ['print(tank.rect.y)']
+                    return go(tank.rect.y - y) + towerRight() + shoot()
                 else:
                     return []
+
+
 
 
     train_wait = -1
