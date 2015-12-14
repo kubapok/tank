@@ -5,6 +5,8 @@ from pygame.locals import *
 import multiprocessing
 #from multiprocessing import Process, Queue
 
+import Tasks
+
 from Tank import *
 from Tree import *
 from Train import *
@@ -77,93 +79,6 @@ fuel = Fuel(110, 530)
 
 def run_game(userInput,received):
     tasklist = []
-
-    def wait():
-        return ['tank.wait()'] * FPS
-
-    def go(distance):
-        return ['tank.move()'] * (distance // tank.speed)
-
-    def shoot():
-        return ['tank.shoot()']
-
-    def turnRight():
-        return ['tank.turnRight()']
-
-    def turnLeft():
-        return ['tank.turnLeft()']
-
-    def towerRight():
-        return ['tank.towerRight()']
-
-    def towerLeft():
-        return ['tank.towerLeft()']
-
-    def rideOver(name):
-        newList = []
-        for item in Target.targets:
-            print(item.targetName)
-            nonlocal target
-            if  item.targetName == name:
-                target = item
-                break
-        assert target.targetName == name
-        x,y = target.rect.x  , target.rect.y
-        print(item.targetName,x,y)
-        print(tank.rect.x, tank.rect.y)
-
-        if tank.rect.y > y: #czolg jest pod
-            if tank.direction == 'up':
-                pass
-            elif tank.direction == 'down':
-                newList += turnRight()
-                newList += wait()
-                newList += turnRight()
-            elif tank.direction == 'left':
-                newList += turnRight()
-            elif tank.direction == 'right':
-                newList += turnLeft()
-            else:
-                assert False
-        elif tank.rect.y <= y: #czolg jest nad
-            if tank.direction == 'up':
-                newList += turnRight()
-                newList += wait()
-                newList += turnRight()
-            elif tank.direction == 'down':
-                pass
-            elif tank.direction == 'left':
-                newList += turnLeft()
-            elif tank.direction == 'right':
-                newList += turnRight()
-            else:
-                assert False
-        print('going:',abs(tank.rect.y - y))
-        newList += go(abs(tank.rect.y - y))
-
-        # STARA POZYCJA CZOŁGU
-        if tank.rect.x < x:
-            if tank.rect.y > y: # czolg jest pod
-                newList += turnRight()
-            elif tank.rect.y < y:
-                newList += turnLeft()
-            else:
-                assert False
-        elif tank.rect.x >= x:
-            if tank.rect.y > y: # czolg jest nad
-                newList += turnLeft()
-            elif tank.rect.y < y:
-                newList += turnRight()
-            else:
-                assert False
-        else:
-            assert False
-
-        print('going: ',abs(x - tank.rect.x))
-        newList += go(abs(x - tank.rect.x))
-        return newList
-
-
     train_wait = -1
     licznik = 300
     while True:
@@ -177,29 +92,35 @@ def run_game(userInput,received):
         if received.value:
             massage = UserInput.get()
             if massage == 'go':
-                tasklist = go(50)
+                tasklist = Tasks.go(50, tank)
             elif massage == 'turn right':
-                tasklist = turnRight()
+                tasklist = Tasks.turnRight()
             elif massage == 'turn left':
-                tasklist = turnLeft()
+                tasklist = Tasks.turnLeft()
             elif massage == 'tower right':
-                tasklist = towerRight()
+                tasklist = TaskstowerRight()
             elif massage == 'tower left':
-                tasklist = towerLeft()
+                tasklist = Tasks.towerLeft()
             elif massage == 'shoot':
-                tasklist = shoot()
+                tasklist = Tasks.shoot()
             elif massage == 'kill house':
-                tasklist = rideOver('house')
+                tasklist = Tasks.rideOver('house', tank, Target.targets)
             elif massage == 'kill sheep':
-                tasklist = rideOver('sheep')
+                tasklist = Tasks.rideOver('sheep', tank, Target.targets)
             elif massage == 'kill tree':
-                tasklist = rideOver('tree')
+                tasklist = Tasks.rideOver('tree', tank, Target.targets)
             elif massage == 'kill boat':
-                tasklist = rideOver('boat')
+                tasklist = Tasks.rideOver('boat', tank, Target.targets)
             elif massage == 'kill train':
-                massage = rideOver('train')
-
-
+                tasklist = Tasks.rideOver('train', tank, Target.targets)
+            elif massage == 'shoot house':
+                tasklist = Tasks.shootTarget('house', tank, Target.targets)
+            elif massage == 'shoot sheep':
+                tasklist = Tasks.shootTarget('sheep', tank, Target.targets)
+            elif massage == 'shoot tree':
+                tasklist = Tasks.shootTarget('tree', tank, Target.targets)
+            elif massage == 'shoot boat':
+                tasklist = Tasks.shootTarget('boat', tank, Target.targets)
             received.value = 0
 
 

@@ -7,7 +7,7 @@ from rotate_center import *
 class Tank(pygame.sprite.Sprite):
     '''represents a tank,
     allows to move, change direction, shot
-    tower moves separatly'''
+    tower moves seperatly'''
 
     toLeft = {  'up' : 'left',
                 'left' : 'down',
