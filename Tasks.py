@@ -23,20 +23,33 @@ def towerRight():
 def towerLeft():
     return ['tank.towerLeft()']
 
-def rideOver(name, tank, targets):
+def rideOver(name, tank, targets, nearest = False):
+    assert nearest in [True, False]
     print(Tank.ammo)
     newList = []
     target = None
-    for item in targets:
-        print(item.targetName)
-        #nonlocal target
-        if  item.targetName == name:
-            target = item
-            break
+
+    if nearest == True:
+        for item in targets:
+            if item.targetName == name:
+                if target == None or abs(tank.rect.x - item.rect.x) + abs(tank.rect.y - item.rect.y) <\
+                                            abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y):
+                    target = item
+                    print(abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y))
+    elif nearest == False:
+        for item in targets:
+            print(item.targetName)
+            if  item.targetName == name:
+                target = item
+                break
+
+
     assert target.targetName == name
     x,y = target.rect.x  , target.rect.y
     print(item.targetName,x,y)
     print(tank.rect.x, tank.rect.y)
+
+
 
     if tank.aim == tank.direction:
         pass
@@ -88,7 +101,7 @@ def rideOver(name, tank, targets):
     if tank.rect.x < x:
         if tank.rect.y > y: # czolg jest pod
             newList += turnRight()
-        elif tank.rect.y < y:
+        elif tank.rect.y <= y:
             newList += turnLeft()
         else:
             assert False
@@ -109,14 +122,26 @@ def rideOver(name, tank, targets):
     return newList
 
 
-def shootTarget(name, tank, targets):
-    target = None
+def shootTarget(name, tank, targets, nearest = False):
+    assert nearest in [True, False]
+    print(Tank.ammo)
     newList = []
-    for item in targets:
-        print(item.targetName)
-        if  item.targetName == name:
-            target = item
-            break
+    target = None
+
+    if nearest == True:
+        for item in targets:
+            if item.targetName == name:
+                if target == None or abs(tank.rect.x - item.rect.x) + abs(tank.rect.y - item.rect.y) <\
+                                            abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y):
+                    target = item
+                    print(abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y))
+    elif nearest == False:
+        for item in targets:
+            print(item.targetName)
+            if  item.targetName == name:
+                target = item
+                break
+
     assert target.targetName == name
     x,y = target.rect.x - target.image.get_rect().centerx // 2 , target.rect.y - target.image.get_rect().centery //2
     print(item.targetName,x,y)
@@ -191,6 +216,9 @@ def shootTarget(name, tank, targets):
     newList += wait()
     newList += shoot()
     return newList
+
+
+
 
 def refillAmmo(tank, targets):
     return rideOver('ammo', tank, targets)

@@ -26,7 +26,7 @@ class Target():
 
 
     def detectCollison(target, tank):
-        if (target.destroyable == True) and pygame.sprite.collide_mask(target, tank):
+        if tank.exist and (target.destroyable == True) and pygame.sprite.collide_mask(target, tank):
             return True
 
 

@@ -37,6 +37,17 @@ class Tank(pygame.sprite.Sprite):
         self.rush = False
         self.ammo = Tank.ammo
         self.fuel = Tank.fuel
+        self.exist = True
+        self.inWater = False
+        self.youDiedMassage = False
+
+    def detectWaterCollision(self,lake):
+        if pygame.sprite.collide_mask(lake, self):
+            if self.inWater == False:
+                print('Tanks cant swim!')
+                self.inWater = True
+            self.exist = False
+
 
     def turnRight(self):
         self.direction = Tank.toRight[self.direction]

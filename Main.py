@@ -89,7 +89,7 @@ def run_game(userInput,received):
 
         DISPLAYSURF.fill(YELLOW)
 
-        if received.value:
+        if received.value and tank.exist:
             massage = UserInput.get()
             if massage == 'go':
                 tasklist = Tasks.go(50, tank)
@@ -104,11 +104,13 @@ def run_game(userInput,received):
             elif massage == 'shoot':
                 tasklist = Tasks.shoot()
             elif massage == 'kill house':
-                tasklist = Tasks.rideOver('house', tank, Target.targets)
+                tasklist = Tasks.rideOver('house', tank, Target.targets, nearest = True)
             elif massage == 'kill sheep':
-                tasklist = Tasks.rideOver('sheep', tank, Target.targets)
+                tasklist = Tasks.rideOver('sheep', tank, Target.targets, nearest = True)
             elif massage == 'kill tree':
-                tasklist = Tasks.rideOver('tree', tank, Target.targets)
+                tasklist = Tasks.rideOver('tree', tank, Target.targets, nearest = True)
+            elif massage == 'kill all trees':
+                tasklist = Tasks.killAll('tree', tank, Target.targets)
             elif massage == 'kill boat':
                 tasklist = Tasks.rideOver('boat', tank, Target.targets)
             elif massage == 'kill train':
@@ -133,6 +135,9 @@ def run_game(userInput,received):
         if tasklist != []: eval(tasklist.pop(0))
 
 
+        if random.random() < 0.0005: make_trees(trees,1,0,400,0,200)
+        if random.random() < 0.0005: make_trees(trees,1,0,180,300,480)
+
         for sheep in sheepes:
             sheep.move()
             sheep.turnIfCollide()
@@ -156,7 +161,14 @@ def run_game(userInput,received):
             bullet.move()
             bullet.display(DISPLAYSURF)
 
-        tank.display(DISPLAYSURF)
+        tank.detectWaterCollision(lake)
+
+        if tank.exist == True:
+            tank.display(DISPLAYSURF)
+        else:
+            if tank.youDiedMassage == False:
+                print('You died, sorry')
+                tank.youDiedMassage = True
 
         train.move()
         train.display(DISPLAYSURF)
