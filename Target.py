@@ -25,8 +25,8 @@ class Target():
             Target.targets.remove(target)
 
 
-    def detectCollison(target, tank):
-        if tank.exist and (target.destroyable == True) and pygame.sprite.collide_mask(target, tank):
+    def detectCollison(target, object):
+        if  (target.destroyable == True) and pygame.sprite.collide_mask(target, object):
             return True
 
 

@@ -37,13 +37,13 @@ path = Path(0,0)
 tracks = Tracks(0,0)
 house = House(610, 240)
 
-
 def make_trees(trees,quantity,min_x,max_x,min_y,max_y):
     for t in range(quantity):
         trees.append(Tree(  int(random.random()*(max_x-min_x)) + min_x,
                             int(random.random()*(max_y-min_y)) + min_y,
                             'light' if random.random() > 0.5 else 'dark'
                             ))
+
 trees = []
 make_trees(trees,30,0,400,0,200)
 make_trees(trees,15,0,180,300,480)
@@ -73,21 +73,22 @@ boats = [
 ]
 
 train = Train(FPS)
+
 ammobox = AmmoBox(25, 530)
 fuel = Fuel(110, 530)
 
 
 def run_game(userInput,received):
     tasklist = []
-    train_wait = -1
-    licznik = 300
+    #train_wait = -1
+    #licznik = 300
     while True:
+        '''
         if licznik: # nie wiem co to robi, ale boje sie na razie usunac
             licznik -= 1
         else:
             licznik = 300
-
-        DISPLAYSURF.fill(YELLOW)
+        '''
 
         if received.value and tank.exist:
             massage = UserInput.get()
@@ -127,13 +128,9 @@ def run_game(userInput,received):
                 tasklist = Tasks.refillAmmo(tank, Target.targets)
             elif massage == 'refill fuel':
                 tasklist= Tasks.refillFuel(tank, Target.targets)
-
             received.value = 0
 
-
-
         if tasklist != []: eval(tasklist.pop(0))
-
 
         if random.random() < 0.0005: make_trees(trees,1,0,400,0,200)
         if random.random() < 0.0005: make_trees(trees,1,0,180,300,480)
@@ -142,7 +139,6 @@ def run_game(userInput,received):
             sheep.move()
             sheep.turnIfCollide()
 
-
         for target in Target.targets:
             if Target.detectCollison(target, tank):
                 Target.delete(target)
@@ -150,6 +146,8 @@ def run_game(userInput,received):
                 if Target.detectCollison(target, bullet):
                     Target.delete(target)
                     bullet.remove()
+
+        DISPLAYSURF.fill(YELLOW)
 
         for target in Target.targets:
             target.display(DISPLAYSURF)
@@ -163,6 +161,13 @@ def run_game(userInput,received):
 
         tank.detectWaterCollision(lake)
 
+
+        ammobox.refillAmmoIfCollison(tank)
+        ammobox.display(DISPLAYSURF)
+
+        fuel.refillFuelIfCollison(tank)
+        fuel.display(DISPLAYSURF)
+
         if tank.exist == True:
             tank.display(DISPLAYSURF)
         else:
@@ -172,13 +177,6 @@ def run_game(userInput,received):
 
         train.move()
         train.display(DISPLAYSURF)
-
-
-        ammobox.refillAmmoIfCollison(tank)
-        ammobox.display(DISPLAYSURF)
-
-        fuel.refillFuelIfCollison(tank)
-        fuel.display(DISPLAYSURF)
 
         for event in pygame.event.get():
 

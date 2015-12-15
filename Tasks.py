@@ -49,8 +49,6 @@ def rideOver(name, tank, targets, nearest = False):
     print(item.targetName,x,y)
     print(tank.rect.x, tank.rect.y)
 
-
-
     if tank.aim == tank.direction:
         pass
     elif tank.aim == Tank.toLeft[tank.direction]:
