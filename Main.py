@@ -17,6 +17,7 @@ from Fence import *
 from Boat import *
 from Path import *
 from House import *
+from Command import *
 
 pygame.init()
 
@@ -92,6 +93,8 @@ def run_game(userInput,received):
 
         if received.value and tank.exist:
             massage = UserInput.get()
+            tasklist = eval('Tasks.' + massage)
+            '''
             if massage == 'go':
                 tasklist = Tasks.go(50, tank)
             elif massage == 'turn right':
@@ -128,6 +131,7 @@ def run_game(userInput,received):
                 tasklist = Tasks.refillAmmo(tank, Target.targets)
             elif massage == 'refill fuel':
                 tasklist= Tasks.refillFuel(tank, Target.targets)
+            '''
             received.value = 0
 
         if tasklist != []: eval(tasklist.pop(0))
@@ -194,6 +198,10 @@ game.start()
 
 while True:
     massage = input()
+
     if massage:
+        command = Command(massage)
+        sendToGame = command.interpret()
+
         received.value = 1
-        UserInput.put(massage)
+        UserInput.put(sendToGame)
