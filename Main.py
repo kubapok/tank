@@ -93,7 +93,7 @@ def run_game(userInput,received):
 
         if received.value and tank.exist:
             massage = UserInput.get()
-            tasklist = eval('Tasks.' + massage)
+            tasklist = eval('Tasks.' + massage) if massage else []
             '''
             if massage == 'go':
                 tasklist = Tasks.go(50, tank)
