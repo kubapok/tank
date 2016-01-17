@@ -42,5 +42,20 @@ class Command():
                 return "refillFuel(tank, Target.targets)"
             print ("Tell me what I should " + Command.refillSynonyms.intersection(self.text).pop())
             return []
+
+        if 'turret' in self.text:
+            if 'left' in self.text:
+                return 'towerLeft()'
+            if 'right' in self.text:
+                return 'towerRight()'
+            print('Which direction should I turn that turret at?')
+
+        if 'left' in self.text:
+            return 'turnLeft()'
+
+        if 'right' in self.text:
+            return 'turnRight()'
+
+
         print('Can You repeat, please?')
         return []

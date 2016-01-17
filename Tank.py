@@ -8,7 +8,7 @@ from Target import *
 class Tank(pygame.sprite.Sprite):
     '''represents a tank,
     allows to move, change direction, shot
-    tower moves seperatly'''
+    turret moves seperatly'''
 
     toLeft = {  'up' : 'left',
                 'left' : 'down',
@@ -59,7 +59,7 @@ class Tank(pygame.sprite.Sprite):
         self.aim = Tank.toLeft[self.aim]
         self.lower = rotate_center(self.lower, 90)
         self.upper = rotate_center(self.upper, 90)
-    def towerRight(self):
+    def towerRight(self): #it shuld be turret, but I am too lazy to change now
         self.aim = Tank.toRight[self.aim]
         self.upper = rotate_center(self.upper, 270)
     def towerLeft(self):
