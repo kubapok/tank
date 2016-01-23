@@ -23,9 +23,18 @@ def towerRight():
 def towerLeft():
     return ['tank.towerLeft()']
 
+def back():
+    if random.random() < 0.5:
+        return ['tank.turnLeft()'] +\
+            wait() +\
+            ['tank.turnLeft()']
+    else:
+        return ['tank.turnRight()'] +\
+            wait() +\
+            ['tank.turnRight()']
+
 def rideOver(name, tank, targets, nearest = False):
     assert nearest in [True, False]
-    print(Tank.ammo)
     newList = []
     target = None
 
@@ -35,19 +44,15 @@ def rideOver(name, tank, targets, nearest = False):
                 if target == None or abs(tank.rect.x - item.rect.x) + abs(tank.rect.y - item.rect.y) <\
                                             abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y):
                     target = item
-                    print(abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y))
     elif nearest == False:
         for item in targets:
-            print(item.targetName)
-            if  item.targetName == name:
-                target = item
-                break
+                if  item.targetName == name:
+                    target = item
+                    break
 
 
     assert target.targetName == name
     x,y = target.rect.x  , target.rect.y
-    print(item.targetName,x,y)
-    print(tank.rect.x, tank.rect.y)
 
     if tank.aim == tank.direction:
         pass
@@ -92,7 +97,6 @@ def rideOver(name, tank, targets, nearest = False):
 
     newList += wait()
 
-    print('going:',abs(tank.rect.y - y))
     newList += go(abs(tank.rect.y - y), tank)
 
     # STARA POZYCJA CZOŁGU
@@ -115,14 +119,12 @@ def rideOver(name, tank, targets, nearest = False):
 
     newList += wait()
 
-    print('going: ',abs(x - tank.rect.x))
     newList += go(abs(x - tank.rect.x), tank)
     return newList
 
 
 def shootTarget(name, tank, targets, nearest = False):
     assert nearest in [True, False]
-    print(Tank.ammo)
     newList = []
     target = None
 
@@ -132,18 +134,15 @@ def shootTarget(name, tank, targets, nearest = False):
                 if target == None or abs(tank.rect.x - item.rect.x) + abs(tank.rect.y - item.rect.y) <\
                                             abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y):
                     target = item
-                    print(abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y))
+
     elif nearest == False:
         for item in targets:
-            print(item.targetName)
             if  item.targetName == name:
                 target = item
                 break
 
     assert target.targetName == name
     x,y = target.rect.x - target.image.get_rect().centerx // 2 , target.rect.y - target.image.get_rect().centery //2
-    print(item.targetName,x,y)
-    print(tank.rect.x, tank.rect.y)
 
 
     if tank.aim == tank.direction:
@@ -190,7 +189,6 @@ def shootTarget(name, tank, targets, nearest = False):
             assert False
 
     newList += wait()
-    print('going:',abs(tank.rect.y - y))
     newList += go(abs(tank.rect.y - y), tank)
 
     # STARA POZYCJA CZOŁGU

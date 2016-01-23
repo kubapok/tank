@@ -7,7 +7,7 @@ shoot = {'shoot',
         'launch',
         'bombard',
         'catapult',
-        'gun'
+        'gun',
 }
 
 ride = {'ride',
@@ -36,4 +36,15 @@ fuel = {'fuel',
         'gas',
         'propellant',
         'food'
+}
+
+back = {'back',
+        'rear',
+}
+
+go = {'go',
+    'rush',
+    'drive',
+    'ride',
+    'race',
 }
