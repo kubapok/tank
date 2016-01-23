@@ -7,7 +7,7 @@ from Target import *
 
 class Train(pygame.sprite.Sprite, Target):
 
-    maxWait = 1 # 30# maximum time we can wait for new train after old one is gone
+    maxWait = 30 # 30# maximum time we can wait for new train after old one is gone
     def __init__(self, FPS):
         pygame.sprite.Sprite.__init__(self)
         Target.__init__(self, True,'train')

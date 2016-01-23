@@ -12,7 +12,8 @@ shoot = {'shoot',
 
 ride = {'ride',
         'drive',
-        'run'
+        'run',
+        'smash'
 }
 
 refill = {'refill',

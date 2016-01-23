@@ -134,7 +134,7 @@ def run_game(userInput,received):
             '''
             received.value = 0
 
-        if tasklist != []: eval(tasklist.pop(0))
+        if tank.exist and tasklist != []: eval(tasklist.pop(0))
 
         if random.random() < 0.0005: make_trees(trees,1,0,400,0,200)
         if random.random() < 0.0005: make_trees(trees,1,0,180,300,480)
@@ -144,7 +144,7 @@ def run_game(userInput,received):
             sheep.turnIfCollide()
 
         for target in Target.targets:
-            if Target.detectCollison(target, tank):
+            if tank.exist and Target.detectCollison(target, tank):
                 Target.delete(target)
             for bullet in Bullet.bullets:
                 if Target.detectCollison(target, bullet):
@@ -163,7 +163,6 @@ def run_game(userInput,received):
             bullet.move()
             bullet.display(DISPLAYSURF)
 
-        tank.detectWaterCollision(lake)
 
 
         ammobox.refillAmmoIfCollison(tank)
@@ -173,6 +172,7 @@ def run_game(userInput,received):
         fuel.display(DISPLAYSURF)
 
         if tank.exist == True:
+            tank.detectWaterCollision(lake)
             tank.display(DISPLAYSURF)
         else:
             if tank.youDiedMassage == False:

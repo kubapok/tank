@@ -20,8 +20,8 @@ class Tank(pygame.sprite.Sprite):
                 'down' : 'left',
                 'left' : 'up'  }
 
-    ammo = 5
-    fuel = 10000
+    ammo = 10
+    fuel = 3000 # 3000 should be ok
 
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
@@ -50,24 +50,40 @@ class Tank(pygame.sprite.Sprite):
 
 
     def turnRight(self):
+        if not self.fuel:
+            print("You don't have any fuel!")
+            return
         self.direction = Tank.toRight[self.direction]
         self.aim = Tank.toRight[self.aim]
         self.lower = rotate_center(self.lower, 270)
         self.upper = rotate_center(self.upper, 270)
     def turnLeft(self):
+        if not self.fuel:
+            print("You don't have any fuel!")
+            return
         self.direction = Tank.toLeft[self.direction]
         self.aim = Tank.toLeft[self.aim]
         self.lower = rotate_center(self.lower, 90)
         self.upper = rotate_center(self.upper, 90)
-    def towerRight(self): #it shuld be turret, but I am too lazy to change now
+    def towerRight(self): #it shuld be turret not tower, but I am too lazy to change now
+        if not self.fuel:
+            print("You don't have any fuel!")
+            return
         self.aim = Tank.toRight[self.aim]
         self.upper = rotate_center(self.upper, 270)
     def towerLeft(self):
+        if not self.fuel:
+            print("You don't have any fuel!")
+            return
         self.aim = Tank.toLeft[self.aim]
         self.upper = rotate_center(self.upper, 90)
 
 
     def move(self):
+        if self.fuel % 100 == 0:
+            print('You have ' + str(self.fuel) + ' out of ' + str(Tank.fuel) + ' units of fuel.')
+        if self.fuel <= 500 and self.fuel % 100 == 0:
+            print('Your level of fuel is critically low. Consider refilling fuel tank.')
         if self.fuel > 0:
             self.fuel -= 1
             if self.direction == 'up':
@@ -94,8 +110,9 @@ class Tank(pygame.sprite.Sprite):
         if self.ammo > 0:
             shoot = Bullet(self.rect.x, self.rect.y, self.aim)
             self.ammo -= 1
+            print('You have ' + str(self.ammo) + ' out of ' +str(Tank.ammo) + ' bullets now.')
         else:
-            print("you don't have enough ammo")
+            print("Sorry, You don't have enough ammo.")
 
     def wait(self):
         pass

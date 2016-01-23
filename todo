@@ -1,16 +1,16 @@
-nltk- biblioteka do przetwarzania języka naturalnego
 sterowanie bez parsowania
 
 jak wyjedzie poza granice to wywalic z TargetList i zrobic nowe
 
 
-restore- odzycie czolga
-szukania slow kluczowych w nlkt
+restore- odzycie czolgas
 part of speech, zeby znalezc czasownik
 zrobic pytania
-piątek 8 przyrost
-to juz sa przedostatnie, 
-konczyc!!!!
-
 
 cmake
+
+zrobic zeby sie pytal kogo zabil (destroy) tak samo co ma refill
+niech jedzie do przodu sam
+poczatek: wprowadzenie, co moze robic user i tak dalej
+forma pisania (Your respond:
+jakieś śmieszne teksty czy cos w tym stylu
