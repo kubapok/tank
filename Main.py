@@ -3,6 +3,7 @@
 import pygame, sys, random
 from pygame.locals import *
 import multiprocessing
+import colorama
 #from multiprocessing import Process, Queue
 
 import Tasks
@@ -20,6 +21,7 @@ from House import *
 from Command import *
 
 pygame.init()
+colorama.init
 
 FPS = 30
 WHITE = (255, 255, 255)
@@ -176,7 +178,7 @@ def run_game(userInput,received):
             tank.display(DISPLAYSURF)
         else:
             if tank.youDiedMassage == False:
-                print('You died, sorry')
+                print(colorama.Back.RED + 'You died, sorry' + colorama.Style.RESET_ALL)
                 tank.youDiedMassage = True
 
         train.move()
