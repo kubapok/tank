@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+import colorama
+colorama.init()
 
+def commandPrint(text):
+    #print(text)
+    print(colorama.Fore.YELLOW + text + colorama.Style.RESET_ALL)
 class Command():
 
     TargetNames = {'house',
@@ -55,11 +60,11 @@ class Command():
         #KILL STH
         if Command.killSynonyms.intersection(self.text):
             if len(Command.TargetNames.intersection(self.text))==0:
-                print("What should I " + Command.killSynonyms.intersection(self.text).pop() + '?')
+                commandPrint("What should I " + Command.killSynonyms.intersection(self.text).pop() + '?')
                 whatToKill = set(input().lower().split())
                 self.text.update(whatToKill)
                 return self.interpret()#returning THIS function
-            print ("Tell me how I should " + Command.killSynonyms.intersection(self.text).pop() + ' '+Command.TargetNames.intersection(self.text).pop()+ '.')
+            commandPrint ("Tell me how I should " + Command.killSynonyms.intersection(self.text).pop() + ' '+Command.TargetNames.intersection(self.text).pop()+ '.')
             howToKill = set(input().lower().split())
             self.text.update(howToKill)
             return self.interpret()
@@ -69,7 +74,7 @@ class Command():
 
         #DO STH WITH TARGET BUT NO ACTION NOT SPECIFIED
         if Command.TargetNames.intersection(self.text):
-            print("What should I do with " + Command.TargetNames.intersection(self.text).pop()+ " ?")
+            commandPrint("What should I do with " + Command.TargetNames.intersection(self.text).pop()+ " ?")
             what = set(input().lower().split())
             self.text.update(what)
             return self.interpret()
@@ -81,7 +86,7 @@ class Command():
                 return "refillAmmo(tank, Target.targets)"
             if Command.fuelSynonyms.intersection(self.text):
                 return "refillFuel(tank, Target.targets)"
-            print ("Tell me what I should " + Command.refillSynonyms.intersection(self.text).pop() +'.')
+            commandPrint ("Tell me what I should " + Command.refillSynonyms.intersection(self.text).pop() +'.')
             whatToRefill = set(input().lower().split())
             if Command.ammoSynonyms.intersection(whatToRefill):
                 return "refillAmmo(tank, Target.targets)"
@@ -94,7 +99,7 @@ class Command():
                 return 'towerLeft()'
             if 'right' in self.text:
                 return 'towerRight()'
-            print('Which direction should I turn that turret at?')
+            commandPrint('Which direction should I turn that turret at?')
 
         #TURN LEFT
         if 'left' in self.text:
@@ -115,6 +120,5 @@ class Command():
             else:
                 return 'go(' + str(Command.inftyDistance) + ',tank)'
 
-
-        print('Can You repeat, please?')
+        commandPrint('Can You repeat, please?')
         return []

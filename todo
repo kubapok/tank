@@ -11,10 +11,9 @@ cmake
 
 [?]zrobic zeby sie pytal kogo zabil (destroy) tak samo co ma refill
 [v]niech jedzie do przodu sam
-[x]pisze co robi w danej chwili
+[v]pisze co robi w danej chwili
 [x]poczatek: wprowadzenie, co moze robic user i tak dalej
-[x]forma pisania (Your respond:
 [x]jakieś śmieszne teksty czy cos w tym stylu
 [x]normalne wyjscie z programu
 [x]co jezeli nie uda sie zrealizowac akcji
-[x]inne kolorki do printowania od czołgu
+[v]inne kolorki do printowania od czołgu

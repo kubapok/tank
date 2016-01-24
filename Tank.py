@@ -201,6 +201,6 @@ class Fuel(pygame.sprite.Sprite, Target):
         display.blit(self.image, (self.rect.x, self.rect.y))
     def refillFuelIfCollison(self, tank):
         if pygame.sprite.collide_mask(self, tank) and tank.fuel < Tank.fuel - Fuel.margin:
-            if Tank.fuel - tank.fuel > 30:
+            if Tank.fuel - tank.fuel > 80:
                 tankPrint('Fuel refilled')
             tank.fuel = Tank.fuel
