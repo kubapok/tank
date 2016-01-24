@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 shoot = {'shoot',
         'blast',
-        'execute',
         'explode',
         'fire',
         'launch',
         'bombard',
         'catapult',
         'gun',
+        'hit'
 }
 
 ride = {'ride',
@@ -48,4 +48,18 @@ go = {'go',
     'drive',
     'ride',
     'race',
+}
+
+kill = {'kill',
+        'assasinate',
+        'murder',
+        'slaughter',
+        'slay',
+        'wipe',
+        'erease',
+        'exterminate',
+        'finish',
+        'liquidate',
+        'neutralize',
+        'waste',
 }

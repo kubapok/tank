@@ -80,10 +80,10 @@ class Tank(pygame.sprite.Sprite):
 
 
     def move(self):
-        if self.fuel % 100 == 0:
+        if self.fuel % 200 == 0 and not self.fuel == Tank.fuel:
             print('You have ' + str(self.fuel) + ' out of ' + str(Tank.fuel) + ' units of fuel.')
-        if self.fuel <= 500 and self.fuel % 100 == 0:
-            print('Your level of fuel is critically low. Consider refilling fuel tank.')
+        if self.fuel <= 500 and self.fuel % 200 == 0:
+            print('Your level of fuel is critically low. Consider refilling the fuel tank.')
         if self.fuel > 0:
             self.fuel -= 1
             if self.direction == 'up':

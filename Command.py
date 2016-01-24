@@ -11,6 +11,9 @@ class Command():
                     'fence'
     }
 
+    #thats funny: if i specify 99999999 fps is very low
+    inftyDistance = 999
+
     import Synonyms
     shootSynonyms       = Synonyms.shoot
     rideSynonyms        = Synonyms.ride
@@ -19,6 +22,7 @@ class Command():
     fuelSynonyms        = Synonyms.fuel
     backSynonyms        = Synonyms.back
     goSynonyms          = Synonyms.go
+    killSynonyms        = Synonyms.kill
 
 
     def __init__(self, massage):
@@ -28,18 +32,42 @@ class Command():
         self.text = set(massage.lower().split())
 
 
-    def interpret(self):
+
+
         #SHOOT STH
+    def interpret(self):
         if Command.shootSynonyms.intersection(self.text):
             if Command.TargetNames.intersection(self.text):
                 return "shootTarget('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
-            else:
-                return "shoot()"
+
+        #KILL STH
+        if Command.killSynonyms.intersection(self.text):
+            if len(Command.TargetNames.intersection(self.text))==0:
+                print("What should I " + Command.killSynonyms.intersection(self.text).pop() + '?')
+                whatToKill = set(input().lower().split())
+                self.text.update(whatToKill)
+                return self.interpret()#returning THIS function
+            print ("Tell me how I should " + Command.killSynonyms.intersection(self.text).pop() + ' '+Command.TargetNames.intersection(self.text).pop()+ '.')
+            howToKill = set(input().lower().split())
+            self.text.update(howToKill)
+            #no return here, the command will be grabber by SHOOT STH OR RIDE OVER STH
+
+
+        #JUST SHOOT
+        if Command.shootSynonyms.intersection(self.text):
+            return"shoot()"
 
         #RIDE OVER STH
         if Command.rideSynonyms.intersection(self.text):
             if Command.TargetNames.intersection(self.text):
                 return "rideOver('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
+
+        #DO STH WITH TARGET BUT NO ACTION NOT SPECIFIED
+        if Command.TargetNames.intersection(self.text):
+            print("What should I do with " + Command.TargetNames.intersection(self.text).pop()+ " ?")
+            what = set(input().lower().split())
+            self.text.update(what)
+            return self.interpret()
 
         #REFILL AMMO OR FUEL
         if Command.refillSynonyms.intersection(self.text):
@@ -47,8 +75,12 @@ class Command():
                 return "refillAmmo(tank, Target.targets)"
             if Command.fuelSynonyms.intersection(self.text):
                 return "refillFuel(tank, Target.targets)"
-            print ("Tell me what I should " + Command.refillSynonyms.intersection(self.text).pop())
-            return []
+            print ("Tell me what I should " + Command.refillSynonyms.intersection(self.text).pop() +'.')
+            whatToRefill = set(input().lower().split())
+            if Command.ammoSynonyms.intersection(whatToRefill):
+                return "refillAmmo(tank, Target.targets)"
+            if Command.fuelSynonyms.intersection(whatToRefill):
+                return "refillFuel(tank, Target.targets)"
 
         #TURRET TO LEFT OR RIGHT
         if 'turret' in self.text:
@@ -69,12 +101,13 @@ class Command():
         if Command.backSynonyms.intersection(self.text):
             return 'back()'
 
+        #GO SPECIFIED DISTANCE OR JUST GO
         if Command.goSynonyms.intersection(self.text):
             digitList = [x for x in self.text if x.isdigit()]
             if len(digitList) == 1:
-                #return 'go(15,tank)'
                 return 'go(' + digitList[0] + ',tank)'
-
+            else:
+                return 'go(' + str(Command.inftyDistance) + ',tank)'
 
 
         print('Can You repeat, please?')

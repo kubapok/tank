@@ -195,10 +195,8 @@ UserInput = multiprocessing.Queue()
 received = multiprocessing.Value('i',0)
 game = multiprocessing.Process(target=run_game, args=(UserInput,received,))
 game.start()
-
 while True:
     massage = input()
-
     if massage:
         command = Command(massage)
         sendToGame = command.interpret()
