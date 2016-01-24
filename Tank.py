@@ -2,8 +2,13 @@
 
 import pygame
 import os
+import colorama
 from rotate_center import *
 from Target import *
+
+colorama.init()
+def tankPrint(text):
+    print(colorama.Fore.YELLOW + text + colorama.Style.RESET_ALL)
 
 class Tank(pygame.sprite.Sprite):
     '''represents a tank,
@@ -44,14 +49,14 @@ class Tank(pygame.sprite.Sprite):
     def detectWaterCollision(self,lake):
         if pygame.sprite.collide_mask(lake, self):
             if self.inWater == False:
-                print('Tanks cant swim!')
+                tankPrint('Tanks cant swim!')
                 self.inWater = True
             self.exist = False
 
 
     def turnRight(self):
         if not self.fuel:
-            print("You don't have any fuel!")
+            tankPrint("You don't have any fuel!")
             return
         self.direction = Tank.toRight[self.direction]
         self.aim = Tank.toRight[self.aim]
@@ -59,7 +64,7 @@ class Tank(pygame.sprite.Sprite):
         self.upper = rotate_center(self.upper, 270)
     def turnLeft(self):
         if not self.fuel:
-            print("You don't have any fuel!")
+            tankPrint("You don't have any fuel!")
             return
         self.direction = Tank.toLeft[self.direction]
         self.aim = Tank.toLeft[self.aim]
@@ -67,13 +72,13 @@ class Tank(pygame.sprite.Sprite):
         self.upper = rotate_center(self.upper, 90)
     def towerRight(self): #it shuld be turret not tower, but I am too lazy to change now
         if not self.fuel:
-            print("You don't have any fuel!")
+            tankPrint("You don't have any fuel!")
             return
         self.aim = Tank.toRight[self.aim]
         self.upper = rotate_center(self.upper, 270)
     def towerLeft(self):
         if not self.fuel:
-            print("You don't have any fuel!")
+            tankPrint("You don't have any fuel!")
             return
         self.aim = Tank.toLeft[self.aim]
         self.upper = rotate_center(self.upper, 90)
@@ -81,9 +86,9 @@ class Tank(pygame.sprite.Sprite):
 
     def move(self):
         if self.fuel % 200 == 0 and not self.fuel == Tank.fuel:
-            print('You have ' + str(self.fuel) + ' out of ' + str(Tank.fuel) + ' units of fuel.')
+            tankPrint('You have ' + str(self.fuel) + ' out of ' + str(Tank.fuel) + ' units of fuel.')
         if self.fuel <= 500 and self.fuel % 200 == 0:
-            print('Your level of fuel is critically low. Consider refilling the fuel tank.')
+            tankPrint('Your level of fuel is critically low. Consider refilling the fuel tank.')
         if self.fuel > 0:
             self.fuel -= 1
             if self.direction == 'up':
@@ -95,7 +100,7 @@ class Tank(pygame.sprite.Sprite):
             elif self.direction == 'left':
                 self.rect.x -= self.speed
         else:
-            print("You don't have any fuel!")
+            tankPrint("You don't have any fuel!")
             self.rush = False
 
     def display(self, display):
@@ -110,9 +115,9 @@ class Tank(pygame.sprite.Sprite):
         if self.ammo > 0:
             shoot = Bullet(self.rect.x, self.rect.y, self.aim)
             self.ammo -= 1
-            print('You have ' + str(self.ammo) + ' out of ' +str(Tank.ammo) + ' bullets now.')
+            tankPrint('You have ' + str(self.ammo) + ' out of ' +str(Tank.ammo) + ' bullets now.')
         else:
-            print("Sorry, You don't have enough ammo.")
+            tankPrint("Sorry, You don't have enough ammo.")
 
     def wait(self):
         pass
@@ -180,7 +185,7 @@ class AmmoBox(pygame.sprite.Sprite, Target):
     def refillAmmoIfCollison(self, tank):
         if pygame.sprite.collide_mask(self, tank) and tank.ammo != Tank.ammo:
             tank.ammo = Tank.ammo
-            print('Ammo refilled')
+            tankPrint('Ammo refilled')
 
 
 class Fuel(pygame.sprite.Sprite, Target):
@@ -196,5 +201,6 @@ class Fuel(pygame.sprite.Sprite, Target):
         display.blit(self.image, (self.rect.x, self.rect.y))
     def refillFuelIfCollison(self, tank):
         if pygame.sprite.collide_mask(self, tank) and tank.fuel < Tank.fuel - Fuel.margin:
+            if Tank.fuel - tank.fuel > 30:
+                tankPrint('Fuel refilled')
             tank.fuel = Tank.fuel
-            print('Fuel refilled')

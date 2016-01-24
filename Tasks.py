@@ -1,29 +1,48 @@
 #!/usr/bin/python3
-import random
+import random, colorama
 from Tank import *
+from Command import Command
+
+colorama.init()
+
+def taskPrint(text, complex = False):
+    if complex:
+        print(colorama.Fore.RED + 'Objective: '  + colorama.Style.RESET_ALL + str(text))
+    else:
+        print(colorama.Fore.GREEN + 'Task: '  + colorama.Style.RESET_ALL + str(text))
 
 def go(distance, tank):
+    if distance == Command.inftyDistance:
+        taskPrint('rushing')
+    else:
+        taskPrint('going ' + str(distance) + ' units of length')
     return ['tank.move()'] * (distance // tank.speed)
 
 def wait():
     return ['tank.wait()'] * 30  # FPS value
 
 def shoot():
+    taskPrint('shooting')
     return ['tank.shoot()']
 
 def turnRight():
+    taskPrint('turning right')
     return ['tank.turnRight()']
 
 def turnLeft():
+    taskPrint('turning left')
     return ['tank.turnLeft()']
 
 def towerRight():
+    taskPrint('turning turret right')
     return ['tank.towerRight()']
 
 def towerLeft():
+    taskPrint('turning turret left')
     return ['tank.towerLeft()']
 
 def back():
+    taskPrint('turning back')
     if random.random() < 0.5:
         return ['tank.turnLeft()'] +\
             wait() +\
@@ -44,12 +63,15 @@ def rideOver(name, tank, targets, nearest = False):
                 if target == None or abs(tank.rect.x - item.rect.x) + abs(tank.rect.y - item.rect.y) <\
                                             abs(tank.rect.x - target.rect.x) + abs(tank.rect.y - target.rect.y):
                     target = item
+
     elif nearest == False:
         for item in targets:
                 if  item.targetName == name:
                     target = item
                     break
 
+    if not target.targetName in {'ammo', 'fuel'}:
+        taskPrint('riding over the ' + target.targetName, complex = True)
 
     assert target.targetName == name
     x,y = target.rect.x  , target.rect.y
@@ -142,6 +164,7 @@ def shootTarget(name, tank, targets, nearest = False):
                 break
 
     assert target.targetName == name
+    taskPrint('shooting the ' + target.targetName, complex = True)
     x,y = target.rect.x - target.image.get_rect().centerx // 2 , target.rect.y - target.image.get_rect().centery //2
 
 
@@ -217,7 +240,9 @@ def shootTarget(name, tank, targets, nearest = False):
 
 
 def refillAmmo(tank, targets):
+    taskPrint('refilling ammo', complex = True)
     return rideOver('ammo', tank, targets)
 
 def refillFuel(tank, targets):
+    taskPrint('refilling fuel', complex = True)
     return rideOver('fuel', tank, targets)

@@ -41,6 +41,17 @@ class Command():
             if Command.TargetNames.intersection(self.text):
                 return "shootTarget('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
 
+
+        #JUST SHOOT
+        if Command.shootSynonyms.intersection(self.text):
+            return"shoot()"
+
+        #RIDE OVER STH
+        if Command.rideSynonyms.intersection(self.text):
+            if Command.TargetNames.intersection(self.text):
+                return "rideOver('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
+
+
         #KILL STH
         if Command.killSynonyms.intersection(self.text):
             if len(Command.TargetNames.intersection(self.text))==0:
@@ -55,14 +66,6 @@ class Command():
             #no return here, the command will be grabber by SHOOT STH OR RIDE OVER STH
 
 
-        #JUST SHOOT
-        if Command.shootSynonyms.intersection(self.text):
-            return"shoot()"
-
-        #RIDE OVER STH
-        if Command.rideSynonyms.intersection(self.text):
-            if Command.TargetNames.intersection(self.text):
-                return "rideOver('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
 
         #DO STH WITH TARGET BUT NO ACTION NOT SPECIFIED
         if Command.TargetNames.intersection(self.text):
@@ -70,6 +73,7 @@ class Command():
             what = set(input().lower().split())
             self.text.update(what)
             return self.interpret()
+
 
         #REFILL AMMO OR FUEL
         if Command.refillSynonyms.intersection(self.text):
