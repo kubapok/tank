@@ -183,7 +183,6 @@ def run_game(userInput,received):
         train.display(DISPLAYSURF)
 
         for event in pygame.event.get():
-
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()

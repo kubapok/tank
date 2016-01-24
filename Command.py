@@ -36,6 +36,7 @@ class Command():
 
         #SHOOT STH
     def interpret(self):
+        #shoot a target
         if Command.shootSynonyms.intersection(self.text):
             if Command.TargetNames.intersection(self.text):
                 return "shootTarget('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
@@ -50,6 +51,7 @@ class Command():
             print ("Tell me how I should " + Command.killSynonyms.intersection(self.text).pop() + ' '+Command.TargetNames.intersection(self.text).pop()+ '.')
             howToKill = set(input().lower().split())
             self.text.update(howToKill)
+            return self.interpret()
             #no return here, the command will be grabber by SHOOT STH OR RIDE OVER STH
 
 
