@@ -4,6 +4,7 @@ import pygame, sys, random
 from pygame.locals import *
 import multiprocessing
 import colorama
+import sys
 #from multiprocessing import Process, Queue
 
 import Tasks
@@ -95,6 +96,9 @@ def run_game(userInput,received):
 
         if received.value and tank.exist:
             massage = UserInput.get()
+            if massage == 'exit':
+                pygame.quit()
+                sys.exit()
             tasklist = eval('Tasks.' + massage) if massage else []
             '''
             if massage == 'go':
@@ -186,6 +190,7 @@ def run_game(userInput,received):
 
         for event in pygame.event.get():
             if event.type == QUIT:
+                pygame.display.quit()
                 pygame.quit()
                 sys.exit()
         pygame.display.update()
@@ -198,9 +203,13 @@ game = multiprocessing.Process(target=run_game, args=(UserInput,received,))
 game.start()
 while True:
     massage = input()
+    if massage == 'exit':
+        received.value = 1
+        UserInput.put('exit')
+        sys.exit()
+        break
     if massage:
         command = Command(massage)
         sendToGame = command.interpret()
-
         received.value = 1
         UserInput.put(sendToGame)
