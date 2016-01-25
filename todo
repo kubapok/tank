@@ -11,6 +11,8 @@ cmake
 
 
 [x]bug-jak zabije ostatni obiekt i chce zabic jeszcze raz to sie wysypuje
+[x] jak bedzie trees to napisac, ze tylko jeden na raz
+
 
 [v]gra od poczatku jak umre
 [v]normalne wyjscie z programu

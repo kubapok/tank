@@ -5,6 +5,11 @@ from Command import Command
 
 colorama.init()
 
+
+def commandPrint(text):
+    #print(text)
+    print(colorama.Fore.YELLOW + text + colorama.Style.RESET_ALL)
+
 def taskPrint(text, complex = False):
     if complex:
         print(colorama.Fore.RED + 'Objective: '  + colorama.Style.RESET_ALL + str(text))
@@ -73,6 +78,11 @@ def rideOver(name, tank, targets, nearest = False):
                 if  item.targetName == name:
                     target = item
                     break
+
+
+    if target == None:
+        commandPrint("There is no " + str(name))
+        return wait()
 
     if not target.targetName in {'ammo', 'fuel'}:
         taskPrint('riding over the ' + target.targetName, complex = True)
@@ -167,6 +177,9 @@ def shootTarget(name, tank, targets, nearest = False):
                 target = item
                 break
 
+    if target == None:
+        commandPrint("There is no " + str(name))
+        return wait()
     assert target.targetName == name
     taskPrint('shooting the ' + target.targetName, complex = True)
     x,y = target.rect.x - target.image.get_rect().centerx // 2 , target.rect.y - target.image.get_rect().centery //2

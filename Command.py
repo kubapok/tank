@@ -16,6 +16,8 @@ class Command():
                     'fence'
     }
 
+
+
     #thats funny: if i specify 99999999 fps is very low
     inftyDistance = 999
 

@@ -26,7 +26,7 @@ class Tank(pygame.sprite.Sprite):
                 'left' : 'up'  }
 
     ammo = 10
-    fuel = 3000 # 3000 should be ok
+    fuel = 2000 # 3000 should be ok
 
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
