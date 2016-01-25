@@ -96,18 +96,22 @@ Just make some noise and try to feel like
 a real tank crewman.
 '''
 
-def run_game(userInput,received):
+def run_game(userInput,received,isDead):
     tasklist = []
 
     while True:
-        if received.value and tank.exist:
-            if len(tasklist) != 0: gamePrint('Aborting current action')
+        if received.value:
             massage = UserInput.get()
             if massage == 'exit':
                 pygame.quit()
                 sys.exit()
-            tasklist = eval('Tasks.' + massage) if massage else []
+
             received.value = 0
+            if tank.exist:
+                if len(tasklist) != 0:
+                    gamePrint('Aborting current action')
+                tasklist = eval('Tasks.' + massage) if massage else []
+
 
         if tank.exist and tasklist != []: eval(tasklist.pop(0))
 
@@ -149,6 +153,7 @@ def run_game(userInput,received):
             tank.display(DISPLAYSURF)
         else:
             if tank.youDiedMassage == False:
+                isDead.value = 1
                 gamePrint("You're dead")
                 tank.youDiedMassage = True
 
@@ -166,7 +171,8 @@ def run_game(userInput,received):
 
 UserInput = multiprocessing.Queue()
 received = multiprocessing.Value('i',0)
-game = multiprocessing.Process(target=run_game, args=(UserInput,received,))
+isDead = multiprocessing.Value('i',0)
+game = multiprocessing.Process(target=run_game, args=(UserInput,received,isDead,))
 game.start()
 
 gamePrint(introText)
@@ -178,7 +184,11 @@ while True:
             UserInput.put('exit')
             sys.exit()
             break
-        command = Command(massage)
-        sendToGame = command.interpret()
-        received.value = 1
-        UserInput.put(sendToGame)
+        if isDead.value == 0:
+            command = Command(massage)
+            sendToGame = command.interpret()
+            received.value = 1
+            UserInput.put(sendToGame)
+        else:
+            gamePrint("You're dead. Type exit to exit.")
+            gamePrint("Type restart to start a new game")

@@ -9,7 +9,7 @@ zrobic pytania
 
 cmake
 
-[x]nic nie mozna zrobic jak umre
+
 [x]bug-jak zabije ostatni obiekt i chce zabic jeszcze raz to sie wysypuje
 [x]gra od poczatku jak umre
 [v]normalne wyjscie z programu
@@ -19,3 +19,4 @@ cmake
 [v]pisze co robi w danej chwili
 [v]inne kolorki do printowania od czołgu
 [v]zrobic stop
+[v]nic nie mozna zrobic jak umre
