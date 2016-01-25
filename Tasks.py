@@ -21,6 +21,10 @@ def go(distance, tank):
 def wait():
     return ['tank.wait()'] * 30  # FPS value
 
+def stop():
+    taskPrint('stopping')
+    return []
+
 def shoot():
     taskPrint('shooting')
     return ['tank.shoot()']

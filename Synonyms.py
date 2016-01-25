@@ -63,4 +63,11 @@ kill = {'kill',
         'liquidate',
         'neutralize',
         'waste',
+        'end',
+}
+
+stop ={'stop',
+        'terminate',
+        'stay',
+        'stand',
 }

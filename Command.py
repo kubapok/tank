@@ -28,6 +28,7 @@ class Command():
     backSynonyms        = Synonyms.back
     goSynonyms          = Synonyms.go
     killSynonyms        = Synonyms.kill
+    stopSynonyms        = Synonyms.stop
 
 
     def __init__(self, massage):
@@ -38,7 +39,6 @@ class Command():
 
 
 
-
         #SHOOT STH
     def interpret(self):
         #shoot a target
@@ -46,6 +46,9 @@ class Command():
             if Command.TargetNames.intersection(self.text):
                 return "shootTarget('"+ Command.TargetNames.intersection(self.text).pop() +"', tank, Target.targets)"
 
+
+        if Command.stopSynonyms.intersection(self.text):
+            return 'stop()'
 
         #JUST SHOOT
         if Command.shootSynonyms.intersection(self.text):
@@ -64,7 +67,7 @@ class Command():
                 whatToKill = set(input().lower().split())
                 self.text.update(whatToKill)
                 return self.interpret()#returning THIS function
-            commandPrint ("Tell me how I should " + Command.killSynonyms.intersection(self.text).pop() + ' '+Command.TargetNames.intersection(self.text).pop()+ '.')
+            commandPrint ("Tell me how I should " + Command.killSynonyms.intersection(self.text).pop() + ' the '+Command.TargetNames.intersection(self.text).pop()+ '.')
             howToKill = set(input().lower().split())
             self.text.update(howToKill)
             return self.interpret()
@@ -74,7 +77,7 @@ class Command():
 
         #DO STH WITH TARGET BUT NO ACTION NOT SPECIFIED
         if Command.TargetNames.intersection(self.text):
-            commandPrint("What should I do with " + Command.TargetNames.intersection(self.text).pop()+ " ?")
+            commandPrint("What should I do with the " + Command.TargetNames.intersection(self.text).pop()+ " ?")
             what = set(input().lower().split())
             self.text.update(what)
             return self.interpret()

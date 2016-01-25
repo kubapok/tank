@@ -81,63 +81,32 @@ train = Train(FPS)
 ammobox = AmmoBox(25, 530)
 fuel = Fuel(110, 530)
 
+def gamePrint(text):
+    print(colorama.Fore.YELLOW + text + colorama.Style.RESET_ALL)
+
+
+introText = '''\
+Welcome to the tank simulation game. You control
+the tank via this command line. Type a command
+in natural language to give an order.
+Type one command at a time. You can use either
+simple and more complex sentences.
+You don't have any particular goal to achieve.
+Just make some noise and try to feel like
+a real tank crewman.
+'''
 
 def run_game(userInput,received):
     tasklist = []
-    #train_wait = -1
-    #licznik = 300
-    while True:
-        '''
-        if licznik: # nie wiem co to robi, ale boje sie na razie usunac
-            licznik -= 1
-        else:
-            licznik = 300
-        '''
 
+    while True:
         if received.value and tank.exist:
+            if len(tasklist) != 0: gamePrint('Aborting current action')
             massage = UserInput.get()
             if massage == 'exit':
                 pygame.quit()
                 sys.exit()
             tasklist = eval('Tasks.' + massage) if massage else []
-            '''
-            if massage == 'go':
-                tasklist = Tasks.go(50, tank)
-            elif massage == 'turn right':
-                tasklist = Tasks.turnRight()
-            elif massage == 'turn left':
-                tasklist = Tasks.turnLeft()
-            elif massage == 'tower right':
-                tasklist = TaskstowerRight()
-            elif massage == 'tower left':
-                tasklist = Tasks.towerLeft()
-            elif massage == 'shoot':
-                tasklist = Tasks.shoot()
-            elif massage == 'kill house':
-                tasklist = Tasks.rideOver('house', tank, Target.targets, nearest = True)
-            elif massage == 'kill sheep':
-                tasklist = Tasks.rideOver('sheep', tank, Target.targets, nearest = True)
-            elif massage == 'kill tree':
-                tasklist = Tasks.rideOver('tree', tank, Target.targets, nearest = True)
-            elif massage == 'kill all trees':
-                tasklist = Tasks.killAll('tree', tank, Target.targets)
-            elif massage == 'kill boat':
-                tasklist = Tasks.rideOver('boat', tank, Target.targets)
-            elif massage == 'kill train':
-                tasklist = Tasks.rideOver('train', tank, Target.targets)
-            elif massage == 'shoot house':
-                tasklist = Tasks.shootTarget('house', tank, Target.targets)
-            elif massage == 'shoot sheep':
-                tasklist = Tasks.shootTarget('sheep', tank, Target.targets)
-            elif massage == 'shoot tree':
-                tasklist = Tasks.shootTarget('tree', tank, Target.targets)
-            elif massage == 'shoot boat':
-                tasklist = Tasks.shootTarget('boat', tank, Target.targets)
-            elif massage == 'refill ammo':
-                tasklist = Tasks.refillAmmo(tank, Target.targets)
-            elif massage == 'refill fuel':
-                tasklist= Tasks.refillFuel(tank, Target.targets)
-            '''
             received.value = 0
 
         if tank.exist and tasklist != []: eval(tasklist.pop(0))
@@ -169,8 +138,6 @@ def run_game(userInput,received):
             bullet.move()
             bullet.display(DISPLAYSURF)
 
-
-
         ammobox.refillAmmoIfCollison(tank)
         ammobox.display(DISPLAYSURF)
 
@@ -182,7 +149,7 @@ def run_game(userInput,received):
             tank.display(DISPLAYSURF)
         else:
             if tank.youDiedMassage == False:
-                print(colorama.Back.RED + 'You died, sorry' + colorama.Style.RESET_ALL)
+                gamePrint("You're dead")
                 tank.youDiedMassage = True
 
         train.move()
@@ -201,14 +168,16 @@ UserInput = multiprocessing.Queue()
 received = multiprocessing.Value('i',0)
 game = multiprocessing.Process(target=run_game, args=(UserInput,received,))
 game.start()
+
+gamePrint(introText)
 while True:
     massage = input()
-    if massage == 'exit':
-        received.value = 1
-        UserInput.put('exit')
-        sys.exit()
-        break
     if massage:
+        if massage == 'exit':
+            received.value = 1
+            UserInput.put('exit')
+            sys.exit()
+            break
         command = Command(massage)
         sendToGame = command.interpret()
         received.value = 1
