@@ -5,6 +5,7 @@ from pygame.locals import *
 import multiprocessing
 import colorama
 import sys
+import time
 #from multiprocessing import Process, Queue
 
 import Tasks
@@ -35,11 +36,10 @@ fpsClock = pygame.time.Clock()
 DISPLAYSURF = pygame.display.set_mode((900, 600), 0, 32)
 pygame.display.set_caption('tank game')
 
-tank = Tank(300,500)
-lake = Lake(0,0)
-path = Path(0,0)
-tracks = Tracks(0,0)
-house = House(610, 240)
+
+
+def gamePrint(text):
+    print(colorama.Fore.YELLOW + text + colorama.Style.RESET_ALL)
 
 def make_trees(trees,quantity,min_x,max_x,min_y,max_y):
     for t in range(quantity):
@@ -47,6 +47,13 @@ def make_trees(trees,quantity,min_x,max_x,min_y,max_y):
                             int(random.random()*(max_y-min_y)) + min_y,
                             'light' if random.random() > 0.5 else 'dark'
                             ))
+
+
+tank = Tank(300,500)
+lake = Lake(0,0)
+path = Path(0,0)
+tracks = Tracks(0,0)
+house = House(610, 240)
 
 trees = []
 make_trees(trees,30,0,400,0,200)
@@ -80,9 +87,6 @@ train = Train(FPS)
 
 ammobox = AmmoBox(25, 530)
 fuel = Fuel(110, 530)
-
-def gamePrint(text):
-    print(colorama.Fore.YELLOW + text + colorama.Style.RESET_ALL)
 
 
 introText = '''\
@@ -153,8 +157,10 @@ def run_game(userInput,received,isDead):
             tank.display(DISPLAYSURF)
         else:
             if tank.youDiedMassage == False:
+                gamePrint("Sorry, You died.")
+                gamePrint("Type anything to exit")
                 isDead.value = 1
-                gamePrint("You're dead")
+                tasklist = []
                 tank.youDiedMassage = True
 
         train.move()
@@ -172,16 +178,25 @@ def run_game(userInput,received,isDead):
 UserInput = multiprocessing.Queue()
 received = multiprocessing.Value('i',0)
 isDead = multiprocessing.Value('i',0)
+
 game = multiprocessing.Process(target=run_game, args=(UserInput,received,isDead,))
 game.start()
 
 gamePrint(introText)
 while True:
+
+    if isDead.value == 1:
+        gamePrint("Sorry, you died. You can't give any orders")
+        gamePrint("Type anything to exit")
+        UserInput.put('exit')
+        received.value = 1
+        sys.exit()
+
     massage = input()
     if massage:
-        if massage == 'exit':
-            received.value = 1
+        if massage == 'exit' and isDead.value == 0:
             UserInput.put('exit')
+            received.value = 1
             sys.exit()
             break
         if isDead.value == 0:
@@ -189,6 +204,3 @@ while True:
             sendToGame = command.interpret()
             received.value = 1
             UserInput.put(sendToGame)
-        else:
-            gamePrint("You're dead. Type exit to exit.")
-            gamePrint("Type restart to start a new game")

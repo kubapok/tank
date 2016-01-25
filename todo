@@ -11,7 +11,8 @@ cmake
 
 
 [x]bug-jak zabije ostatni obiekt i chce zabic jeszcze raz to sie wysypuje
-[x]gra od poczatku jak umre
+
+[v]gra od poczatku jak umre
 [v]normalne wyjscie z programu
 [v]poczatek: wprowadzenie, co moze robic user i tak dalej
 [v]zrobic zeby sie pytal kogo zabil (destroy) tak samo co ma refill
