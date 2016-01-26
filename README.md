@@ -1,7 +1,11 @@
-# tank
+This game is written by Jakub Pokrywka as a project for my Computer Science Studies.
+The goal of the project is to communicate with a computer with natural language.
 
-game requires python3 and pygame
+Python 3 and pygame is required.
 
-to run type in the console:python3 Main.py
+All the code is written by me as well as I made all the graphics.
 
-you control tank via text console
+License is included in LICENSE.md
+
+To run the game type python3 Main.py in terminal. You get a window where
+the game is displayed. To communicate with the tank use terminal.

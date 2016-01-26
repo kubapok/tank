@@ -3,7 +3,7 @@
 import pygame
 import os
 import colorama
-from rotate_center import *
+from rot_center import *
 from Target import *
 
 colorama.init()
@@ -60,28 +60,28 @@ class Tank(pygame.sprite.Sprite):
             return
         self.direction = Tank.toRight[self.direction]
         self.aim = Tank.toRight[self.aim]
-        self.lower = rotate_center(self.lower, 270)
-        self.upper = rotate_center(self.upper, 270)
+        self.lower = rot_center(self.lower, 270)
+        self.upper = rot_center(self.upper, 270)
     def turnLeft(self):
         if not self.fuel:
             tankPrint("You don't have any fuel!")
             return
         self.direction = Tank.toLeft[self.direction]
         self.aim = Tank.toLeft[self.aim]
-        self.lower = rotate_center(self.lower, 90)
-        self.upper = rotate_center(self.upper, 90)
+        self.lower = rot_center(self.lower, 90)
+        self.upper = rot_center(self.upper, 90)
     def towerRight(self): #it shuld be turret not tower, but I am too lazy to change now
         if not self.fuel:
             tankPrint("You don't have any fuel!")
             return
         self.aim = Tank.toRight[self.aim]
-        self.upper = rotate_center(self.upper, 270)
+        self.upper = rot_center(self.upper, 270)
     def towerLeft(self):
         if not self.fuel:
             tankPrint("You don't have any fuel!")
             return
         self.aim = Tank.toLeft[self.aim]
-        self.upper = rotate_center(self.upper, 90)
+        self.upper = rot_center(self.upper, 90)
 
 
     def move(self):
@@ -132,11 +132,11 @@ class Bullet(pygame.sprite.Sprite):
         if aim == 'up':
             pass
         elif aim == 'right':
-            self.image = rotate_center(self.image, 270)
+            self.image = rot_center(self.image, 270)
         elif aim == 'down':
-            self.image = rotate_center(self.image, 180)
+            self.image = rot_center(self.image, 180)
         elif aim == 'left':
-            self.image = rotate_center(self.image, 90)
+            self.image = rot_center(self.image, 90)
         else:
             assert False
 
