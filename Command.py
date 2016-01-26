@@ -16,6 +16,12 @@ class Command():
                     'fence'
     }
 
+    ForbiddenPluralNames = {'trees',
+                            'boats',
+                            'trains',
+                            'fences',
+    }
+
 
 
     #thats funny: if i specify 99999999 fps is very low
@@ -43,6 +49,11 @@ class Command():
 
         #SHOOT STH
     def interpret(self):
+
+        if Command.ForbiddenPluralNames.intersection(self.text):
+            commandPrint("One command at a time. Don't use plural form")
+            self.text = self.text.difference(Command.ForbiddenPluralNames.intersection(self.text))
+
         #shoot a target
         if Command.shootSynonyms.intersection(self.text):
             if Command.TargetNames.intersection(self.text):
