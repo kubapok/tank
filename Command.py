@@ -20,6 +20,7 @@ class Command():
                             'boats',
                             'trains',
                             'fences',
+                            'houses',
     }
 
 
@@ -52,6 +53,8 @@ class Command():
 
         if Command.ForbiddenPluralNames.intersection(self.text):
             commandPrint("One command at a time. Don't use plural form")
+            if Command.rideSynonyms.intersection(self.text):
+                return 'stop()'
             self.text = self.text.difference(Command.ForbiddenPluralNames.intersection(self.text))
 
         #shoot a target
