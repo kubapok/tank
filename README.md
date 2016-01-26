@@ -1,3 +1,5 @@
+![screenshot](https://github.com/kubapok/tank-game/blob/master/Screenshot-tank-game.png)
+
 This game is written by Jakub Pokrywka as a project for my Computer Science Studies.
 The goal of the project is to communicate with a computer with natural language.
 
